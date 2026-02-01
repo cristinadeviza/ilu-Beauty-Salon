@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ilu — Beauty-Refugium</title>
+
+  <style>
+    :root{
+      /* Paleta (inspirată din imagine) */
+      --cream: #FFF3DF;   /* foarte deschis */
+      --beige: #D5C1B8;   /* bej / nude */
+      --mocha: #644D42;   /* maro */
+      --choco: #26140C;   /* maro foarte închis */
+
+      --bg: #ffffff;
+      --text: var(--choco);
+      --muted: rgba(38,20,12,.72);
+      --line: rgba(38,20,12,.16);
+
+      --shadow: 0 18px 45px rgba(38,20,12,.12);
+      --r-lg: 26px;
+      --r-md: 18px;
+      --r-sm: 14px;
+
+      --max: 1140px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .container{ width:min(var(--max), 92vw); margin:0 auto; }
+
+    /* Header */
+    header{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(38,20,12,.08);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.6px;
+    }
+    .brand .logo{
+      font-size: 22px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,243,223,.55);
+    }
+    .brand small{
+      font-weight:700;
+      color: rgba(38,20,12,.55);
+    }
+
+    .navlinks{
+      list-style:none;
+      display:flex;
+      gap:16px;
+      padding:0;
+      margin:0;
+      font-weight:750;
+      color: rgba(38,20,12,.78);
+    }
+    .navlinks a{
+      padding:10px 10px;
+      border-radius: 12px;
+    }
+    .navlinks a:hover{
+      background: rgba(213,193,184,.25);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight:900;
+      cursor:pointer;
+      transition: transform .08s ease, opacity .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn-primary{
+      background: var(--choco);
+      color: var(--cream);
+      box-shadow: 0 12px 26px rgba(38,20,12,.18);
+    }
+    .btn-primary:hover{ opacity:.92; }
+    .btn-outline{
+      background: transparent;
+      border-color: rgba(38,20,12,.22);
+      color: var(--choco);
+    }
+    .btn-outline:hover{ background: rgba(255,243,223,.55); }
+
+    /* Hero (ca în exemplu) */
+    .hero{
+      padding: 46px 0 18px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border: 1px solid var(--line);
+      background: rgba(255,243,223,.7);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight:900;
+      color: rgba(38,20,12,.75);
+      width: fit-content;
+    }
+    .kdot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--mocha);
+      box-shadow: 0 0 0 6px rgba(100,77,66,.12);
+    }
+    .hero h1{
+      margin: 14px 0 10px;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 60ch;
+      font-weight: 650;
+    }
+    .heroActions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    .heroImg{
+      border-radius: var(--r-lg);
+      overflow:hidden;
+      border: 1px solid rgba(38,20,12,.10);
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(800px 420px at 15% 15%, rgba(213,193,184,.55), transparent 60%),
+        linear-gradient(135deg, rgba(255,243,223,.85), rgba(100,77,66,.10));
+      min-height: 340px;
+      position:relative;
+    }
+    .heroImg::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(520px 260px at 85% 0%, rgba(38,20,12,.12), transparent 65%);
+    }
+    .heroImg .imgNote{
+      position:absolute;
+      left:16px; bottom:16px;
+      z-index:2;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      font-weight: 900;
+      color: rgba(38,20,12,.75);
+      font-size: 12px;
+    }
+
+    /* Section base */
+    section{ padding: 44px 0; }
+    .secHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .secHead h2{
+      margin:0;
+      font-size: clamp(26px, 2.8vw, 40px);
+      letter-spacing: -0.5px;
+    }
+    .secHead p{
+      margin:0;
+      color: var(--muted);
+      font-weight:650;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+
+    /* Welcome section (cu fundal colorat ca în imagini) */
+    .bg-beige{
+      background: linear-gradient(180deg, rgba(213,193,184,.55), rgba(213,193,184,.55));
+    }
+    .welcomeGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items:center;
+    }
+    .welcomeArt{
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(38,20,12,.10);
+      background:
+        radial-gradient(700px 400px at 15% 15%, rgba(255,243,223,.85), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.65), rgba(100,77,66,.08));
+      min-height: 360px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .welcomeArt::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(520px 260px at 85% 0%, rgba(38,20,12,.10), transparent 65%);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,243,223,.65);
+      font-weight:900;
+      font-size: 12px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .tag i{
+      width:10px; height:10px;
+      border-radius: 4px;
+      background: var(--mocha);
+      display:inline-block;
+      box-shadow: 0 0 0 6px rgba(100,77,66,.12);
+    }
+
+    /* Cards like in examples (outline) */
+    .panel{
+      border-radius: var(--r-lg);
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(38,20,12,.10);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+    .cards3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .cardOutline{
+      border-radius: var(--r-md);
+      border: 1.6px solid rgba(38,20,12,.20);
+      background: rgba(255,255,255,.72);
+      padding: 18px;
+      min-height: 140px;
+    }
+    .cardOutline h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .cardOutline p{
+      margin:0;
+      color: var(--muted);
+      font-weight:650;
+      line-height: 1.55;
+    }
+
+    /* Steps section (01/02/03 like image) */
+    .stepsGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items:start;
+    }
+    .stepsArt{
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(38,20,12,.10);
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(700px 420px at 20% 20%, rgba(213,193,184,.45), transparent 60%),
+        linear-gradient(135deg, rgba(255,243,223,.85), rgba(100,77,66,.10));
+      min-height: 360px;
+      position:relative;
+      overflow:hidden;
+    }
+    .stepsArt::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(520px 260px at 85% 0%, rgba(38,20,12,.10), transparent 65%);
+    }
+
+    .step{
+      padding: 8px 0 16px;
+      border-bottom: 1px solid rgba(38,20,12,.16);
+    }
+    .step:last-child{ border-bottom: none; }
+    .stepTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .stepNum{
+      font-weight: 950;
+      color: rgba(38,20,12,.45);
+      letter-spacing: .5px;
+    }
+    .stepTitle{
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -.3px;
+      margin: 0;
+    }
+    .stepText{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .testGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .quote{
+      border-radius: var(--r-md);
+      border: 1.6px solid rgba(38,20,12,.20);
+      background: rgba(255,255,255,.72);
+      padding: 18px;
+      position:relative;
+      min-height: 160px;
+    }
+    .quote::before{
+      content:"“";
+      position:absolute;
+      left: 14px;
+      top: -16px;
+      font-size: 60px;
+      font-weight: 900;
+      color: rgba(100,77,66,.35);
+    }
+    .quote strong{ display:block; margin-bottom: 6px; font-size: 16px; }
+    .quote p{ margin:0; color: var(--muted); font-weight:650; line-height:1.6; }
+    .quote footer{ margin-top: 10px; font-weight:900; color: rgba(38,20,12,.65); }
+
+    /* Prices (table-like) */
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
+    .tab{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(38,20,12,.18);
+      background: rgba(255,243,223,.65);
+      font-weight: 900;
+      cursor:pointer;
+      user-select:none;
+    }
+    .tab[aria-selected="true"]{
+      background: var(--choco);
+      color: var(--cream);
+      border-color: transparent;
+    }
+
+    .priceGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .priceList{
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(38,20,12,.10);
+      background: rgba(255,255,255,.75);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .priceList h3{
+      margin:0 0 10px;
+      font-size: 20px;
+      letter-spacing: -.3px;
+    }
+    .sub{
+      margin:0 0 14px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,243,223,.55);
+      border: 1px solid rgba(38,20,12,.12);
+      margin-top: 10px;
+    }
+    .row .name{ font-weight: 850; }
+    .row .price{
+      font-weight: 950;
+      color: rgba(38,20,12,.85);
+      white-space:nowrap;
+    }
+    .row small{
+      display:block;
+      color: rgba(38,20,12,.55);
+      font-weight: 750;
+      margin-top: 3px;
+    }
+
+    /* CTA end */
+    .ctaEnd{
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(38,20,12,.10);
+      background:
+        radial-gradient(900px 420px at 15% 15%, rgba(213,193,184,.45), transparent 60%),
+        linear-gradient(180deg, rgba(255,243,223,.7), rgba(255,255,255,.75));
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
+    }
+    .ctaEnd h2{ margin:0 0 8px; font-size: clamp(24px, 2.8vw, 40px); }
+    .ctaEnd p{ margin:0; color: var(--muted); font-weight:650; line-height:1.6; max-width: 70ch; }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid rgba(38,20,12,.08);
+      background: rgba(255,243,223,.45);
+      margin-top: 34px;
+    }
+    .foot{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .foot h4{ margin:0 0 10px; font-size: 14px; font-weight: 950; }
+    .foot p, .foot a{ margin:0; color: rgba(38,20,12,.75); font-weight:650; line-height:1.75; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid, .welcomeGrid, .stepsGrid { grid-template-columns: 1fr; }
+      .cards3, .testGrid { grid-template-columns: 1fr; }
+      .priceGrid { grid-template-columns: 1fr; }
+      .navlinks{ display:none; }
+      .heroImg, .welcomeArt, .stepsArt{ min-height: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">ilu</div>
+        <small>Beauty Studio • Frankfurt</small>
+      </div>
+
+      <ul class="navlinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Warum wir?</a></li>
+        <li><a href="#prices">Preise</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+
+      <div style="display:flex; gap:10px;">
+        <a class="btn btn-outline" href="#contact">Mehr erfahren</a>
+        <a class="btn btn-primary" href="#contact">Jetzt Termin buchen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container heroGrid">
+        <div>
+          <div class="kicker"><span class="kdot"></span> Dein Beauty-Refugium in Frankfurt</div>
+          <h1>Perfekte Augenbrauen, Wimpern & sanfte Haarentfernung</h1>
+          <p>
+            Wir unterstreichen deine natürliche Schönheit – mit präzisem Brow-Styling,
+            Wimpern-Lifting und professionellem Waxing/Sugaring. Entspann dich. Wir kümmern uns um den Rest.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn btn-primary" href="#contact">Jetzt Termin buchen</a>
+            <a class="btn btn-outline" href="#services">Mehr erfahren</a>
+          </div>
+        </div>
+
+        <div class="heroImg" aria-label="Salon Bild (Placeholder)">
+          <div class="imgNote">Hier kannst du später ein echtes Foto einsetzen</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELCOME -->
+    <section class="bg-beige" id="services">
+      <div class="container">
+        <div class="secHead">
+          <div>
+            <div class="tag"><i></i> WILLKOMMEN</div>
+            <h2>Willkommen im Salon für Stil und Schönheit</h2>
+          </div>
+          <p>
+            Entdecke dein neues Lieblingsstudio in Frankfurt. Professionelle Behandlungen für Augenbrauen,
+            Wimpern und sanfte Epilation – mit einem ruhigen, warmen Look.
+          </p>
+        </div>
+
+        <div class="welcomeGrid">
+          <div class="welcomeArt" aria-label="Illustration/Foto Placeholder"></div>
+
+          <div class="panel">
+            <p style="margin:0; color:var(--muted); font-weight:650; line-height:1.7;">
+              Wir schaffen einen Wohlfühlort zum Entspannen. Jede Behandlung ist individuell,
+              abgestimmt auf deinen Stil – für ein Ergebnis, das natürlich wirkt und lange hält.
+            </p>
+
+            <div class="cards3">
+              <div class="cardOutline">
+                <h3>Perfekte Definition</h3>
+                <p>Präzise Formen und Pflege für natürlich aussehende Ergebnisse.</p>
+              </div>
+              <div class="cardOutline">
+                <h3>Langanhaltend</h3>
+                <p>Sanfte Techniken – Ergebnisse, die Wochen halten können.</p>
+              </div>
+              <div class="cardOutline">
+                <h3>Individuelle Beratung</h3>
+                <p>Wir finden den Look, der deine Gesichtszüge optimal betont.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <div class="container">
+        <div class="secHead">
+          <h2>Warum unser Salon in Frankfurt?</h2>
+          <p>Qualität, Ruhe und saubere Ergebnisse – ohne Hektik.</p>
+        </div>
+
+        <div class="cards3">
+          <div class="cardOutline">
+            <h3>Expertise & Erfahrung</h3>
+            <p>Zertifizierte Stylistinnen mit Leidenschaft und Blick fürs Detail.</p>
+          </div>
+          <div class="cardOutline">
+            <h3>Premium Produkte</h3>
+            <p>Hochwertige Produkte und moderne Techniken für beste Resultate.</p>
+          </div>
+          <div class="cardOutline">
+            <h3>Individuelle Betreuung</h3>
+            <p>Jede Behandlung maßgeschneidert – auf deine Wünsche abgestimmt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="bg-beige">
+      <div class="container">
+        <div class="secHead">
+          <div>
+            <div class="tag"><i></i> KUNDENSTIMMEN</div>
+            <h2>Begeisterte Kundinnen aus Frankfurt</h2>
+          </div>
+          <p>Ein paar Beispielstimmen – kannst du später mit echten ersetzen.</p>
+        </div>
+
+        <div class="testGrid">
+          <blockquote class="quote">
+            <strong>Endlich perfekte Ergebnisse!</strong>
+            <p>Die Behandlung ist fantastisch und hält den ganzen Tag. Super Service.</p>
+            <footer>— Anna S.</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <strong>Wow-Effekt ohne Stress</strong>
+            <p>Sanft, schnell und einfach toll. Ich komme definitiv wieder.</p>
+            <footer>— Maria K.</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <strong>So weich wie nie zuvor</strong>
+            <p>Sanfte Epilation – meine Haut fühlt sich glatt und gepflegt an.</p>
+            <footer>— Lena M.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section>
+      <div class="container">
+        <div class="secHead">
+          <h2>So einfach kommst du zu deinem Termin</h2>
+          <p>Online buchen, flexible Zeiten und persönliche Beratung – ganz unkompliziert.</p>
+        </div>
+
+        <div class="stepsGrid">
+          <div class="stepsArt" aria-label="Bild Placeholder"></div>
+
+          <div class="panel">
+            <div class="step">
+              <div class="stepTop">
+                <div class="stepNum">01</div>
+              </div>
+              <h3 class="stepTitle">Online buchen</h3>
+              <p class="stepText">Rund um die Uhr verfügbar. Bequem und schnell von zu Hause.</p>
+            </div>
+
+            <div class="step">
+              <div class="stepTop">
+                <div class="stepNum">02</div>
+              </div>
+              <h3 class="stepTitle">Flexible Zeiten</h3>
+              <p class="stepText">Öffnungszeiten auch abends und samstags – perfekt für deinen Alltag.</p>
+            </div>
+
+            <div class="step">
+              <div class="stepTop">
+                <div class="stepNum">03</div>
+              </div>
+              <h3 class="stepTitle">Persönliche Beratung</h3>
+              <p class="stepText">Individuell vor Ort. Maßgeschneidert für dich und deine Haut.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section class="bg-beige" id="prices">
+      <div class="container">
+        <div class="secHead">
+          <div>
+            <h2>Unsere Preise</h2>
+            <p>Transparenz und faire Konditionen — Standardpreise / mit Kundenkarte.</p>
+          </div>
+          <p style="text-align:right;">
+            Kombi-Angebote verfügbar!<br />
+            <span style="color:var(--muted); font-weight:650;">Frage nach speziellen Paketen.</span>
+          </p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Preise Tabs">
+          <div class="tab" role="tab" aria-selected="true" data-tab="waxing">WAXING</div>
+          <div class="tab" role="tab" aria-selected="false" data-tab="sugaring">SUGARING</div>
+        </div>
+
+        <div class="priceGrid">
+          <!-- WAXING -->
+          <div class="priceList" id="waxing" role="tabpanel">
+            <h3>WAXING</h3>
+            <p class="sub">Standardpreise / mit Kundenkarte</p>
+
+            <div class="row"><div class="name">Oberschenkel</div><div class="price">28€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Unterschenkel</div><div class="price">28€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Beine komplett</div><div class="price">39€ <small>/ 31€</small></div></div>
+            <div class="row"><div class="name">Bikini klassisch</div><div class="price">22€ <small>/ 16€</small></div></div>
+            <div class="row"><div class="name">Bikini brasilianisch</div><div class="price">29€ <small>/ 22€</small></div></div>
+            <div class="row"><div class="name">Bikini komplett</div><div class="price">44€ <small>/ 36€</small></div></div>
+            <div class="row"><div class="name">Po</div><div class="price">22€ <small>/ 14€</small></div></div>
+            <div class="row"><div class="name">Rücken unten</div><div class="price">25€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Schultern</div><div class="price">30€ <small>/ 25€</small></div></div>
+            <div class="row"><div class="name">Rücken komplett</div><div class="price">48€ <small>/ 37€</small></div></div>
+            <div class="row"><div class="name">Bauch</div><div class="price">22€ <small>/ 16€</small></div></div>
+            <div class="row"><div class="name">Brust</div><div class="price">29€ <small>/ 22€</small></div></div>
+            <div class="row"><div class="name">Achseln</div><div class="price">19€ <small>/ 13€</small></div></div>
+            <div class="row"><div class="name">Unterarme</div><div class="price">21€ <small>/ 18€</small></div></div>
+            <div class="row"><div class="name">Arme komplett</div><div class="price">30€ <small>/ 24€</small></div></div>
+            <div class="row"><div class="name">Hände</div><div class="price">16€ <small>/ 14€</small></div></div>
+            <div class="row"><div class="name">Füße</div><div class="price">16€ <small>/ 14€</small></div></div>
+            <div class="row"><div class="name">Nase / Ohren</div><div class="price">16€ <small>/ 14€</small></div></div>
+          </div>
+
+          <!-- SUGARING -->
+          <div class="priceList" id="sugaring" role="tabpanel" hidden>
+            <h3>SUGARING</h3>
+            <p class="sub">Standardpreise / mit Kundenkarte</p>
+
+            <div class="row"><div class="name">Oberschenkel</div><div class="price">39€ <small>/ 31€</small></div></div>
+            <div class="row"><div class="name">Unterschenkel</div><div class="price">39€ <small>/ 31€</small></div></div>
+            <div class="row"><div class="name">Beine komplett</div><div class="price">65€ <small>/ 53€</small></div></div>
+            <div class="row"><div class="name">Bikini klassisch</div><div class="price">28€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Bikini brasilianisch</div><div class="price">37€ <small>/ 28€</small></div></div>
+            <div class="row"><div class="name">Bikini komplett</div><div class="price">54€ <small>/ 43€</small></div></div>
+            <div class="row"><div class="name">Po</div><div class="price">26€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Rücken unten</div><div class="price">31€ <small>/ 25€</small></div></div>
+            <div class="row"><div class="name">Schultern</div><div class="price">42€ <small>/ 35€</small></div></div>
+            <div class="row"><div class="name">Rücken komplett</div><div class="price">64€ <small>/ 53€</small></div></div>
+            <div class="row"><div class="name">Bauch</div><div class="price">26€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Brust</div><div class="price">38€ <small>/ 28€</small></div></div>
+            <div class="row"><div class="name">Achseln</div><div class="price">27€ <small>/ 21€</small></div></div>
+            <div class="row"><div class="name">Unterarme</div><div class="price">32€ <small>/ 26€</small></div></div>
+            <div class="row"><div class="name">Arme komplett</div><div class="price">43€ <small>/ 32€</small></div></div>
+            <div class="row"><div class="name">Oberlippe</div><div class="price">17€ <small>/ 13€</small></div></div>
+            <div class="row"><div class="name">Hände / Füße</div><div class="price">19€ <small>/ 14€</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA END -->
+    <section id="contact">
+      <div class="container">
+        <div class="ctaEnd">
+          <div>
+            <div class="tag"><i></i> JETZT TERMIN SICHERN</div>
+            <h2>Dein neuer Look wartet auf dich</h2>
+            <p>
+              Erlebe Beauty auf höchstem Niveau in Frankfurt. Lass dich verwöhnen und strahle.
+              Für Fragen oder Wunschzeiten schreib uns einfach.
+            </p>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:termine@ilu.de?subject=Termin%20anfragen%20-%20ilu">Termin vereinbaren</a>
+            <a class="btn btn-outline" href="tel:+496900000000">Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container foot">
+        <div>
+          <h4>ilu</h4>
+          <p>Beauty Studio • Frankfurt</p>
+          <p style="color:var(--muted);">Paleta: #FFF3DF • #D5C1B8 • #644D42 • #26140C</p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <p><a href="#services">Services</a></p>
+          <p><a href="#prices">Preise</a></p>
+          <p><a href="#contact">Kontakt</a></p>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <p>Telefon: +49 69 00000000</p>
+          <p>E-Mail: termine@ilu.de</p>
+          <p>Adresse: Musterstraße 10, Frankfurt</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple tabs: WAXING / SUGARING
+    const tabs = document.querySelectorAll('.tab');
+    const panels = {
+      waxing: document.getElementById('waxing'),
+      sugaring: document.getElementById('sugaring')
+    };
+
+    tabs.forEach(t => {
+      t.addEventListener('click', () => {
+        const key = t.dataset.tab;
+
+        tabs.forEach(x => x.setAttribute('aria-selected', String(x === t)));
+        Object.entries(panels).forEach(([k, el]) => {
+          el.hidden = (k !== key);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

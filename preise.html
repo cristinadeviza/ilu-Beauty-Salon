@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ILU - Preisliste</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --cream: #fff3df;
+        --beige: #d5c1b8;
+        --mocha: #644d42;
+        --choco: #26140c;
+        --accent: #d5c1b8;
+        --text-dark: #26140c;
+        --text-light: #644d42;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background: var(--cream);
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--choco) 0%, var(--mocha) 100%);
+        padding: 1.8rem 5%;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 300;
+        color: var(--cream);
+        letter-spacing: 3px;
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--cream);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 1px;
+        background: var(--accent);
+        transition: width 0.25s ease;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .page-hero {
+        padding: 5rem 5% 2.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .page-hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5vw, 64px);
+        font-weight: 500;
+        color: var(--choco);
+        margin-bottom: 0.75rem;
+        line-height: 1.05;
+      }
+      .page-hero p {
+        color: var(--text-light);
+        line-height: 1.7;
+        max-width: 70ch;
+        font-size: 1rem;
+      }
+
+      .preise-section {
+        padding: 2.5rem 5% 6rem;
+        background: transparent;
+      }
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+      .section-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        font-weight: 500;
+        color: var(--choco);
+        margin-bottom: 0.75rem;
+        display: inline-block;
+        position: relative;
+      }
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 80px;
+        height: 2px;
+        background: var(--mocha);
+      }
+      .section-header p {
+        margin-top: 1.8rem;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      .price-tables {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+        gap: 2.5rem;
+      }
+      .price-table {
+        background: #fff;
+        border-radius: 22px;
+        padding: 2.4rem;
+        border: 1px solid rgba(38, 20, 12, 0.1);
+        box-shadow: 0 18px 55px rgba(38, 20, 12, 0.1);
+      }
+      .price-table h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.1rem;
+        color: var(--choco);
+        text-align: center;
+        margin-bottom: 1.8rem;
+      }
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(100, 77, 66, 0.14);
+        gap: 1rem;
+      }
+      .price-item:last-child {
+        border-bottom: none;
+      }
+      .price-name {
+        font-size: 0.98rem;
+        color: var(--text-dark);
+        font-weight: 400;
+      }
+      .price-values {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+      }
+      .price-standard {
+        color: var(--text-light);
+        font-weight: 400;
+        text-decoration: none; /* IMPORTANT */
+      }
+
+      .price-card {
+        color: var(--mocha);
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 1.6rem;
+        color: var(--mocha);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(100, 77, 66, 0.4);
+        padding-bottom: 2px;
+      }
+      .back-link:hover {
+        opacity: 0.85;
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .price-tables {
+          grid-template-columns: 1fr;
+        }
+        .price-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="index.html">ilu</a>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#servicii">Behandlungen</a></li>
+          <li><a href="preise.html">Preise</a></li>
+          <li><a href="index.html#kundenkarte">Kundenkarte</a></li>
+          <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="page-hero">
+      <h1>Preisliste</h1>
+      <p>
+        Klare Preise pro Behandlung. Regulärer Preis · Vorteilspreis für
+        Kundinnen mit Kundenkarte
+      </p>
+
+      <a class="back-link" href="index.html#servicii"
+        >← Zurück zu den Behandlungen</a
+      >
+    </div>
+
+    <!-- PREISE -->
+    <section class="preise-section">
+      <div class="section-header">
+        <h2>Preise</h2>
+        <p>
+          Alle Preise gelten pro Behandlung. Bei individuellen Wünschen beraten
+          wir dich gerne persönlich.
+        </p>
+      </div>
+
+      <div class="price-tables">
+        <!-- WAXING -->
+        <div class="price-table">
+          <h3>WAXING</h3>
+
+          <div class="price-item">
+            <span class="price-name">Oberschenkel</span>
+            <div class="price-values">
+              <span class="price-standard">28€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterschenkel</span>
+            <div class="price-values">
+              <span class="price-standard">28€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">
+Beine – komplett <em>· beliebt</em>
+</span>
+
+            <div class="price-values">
+              <span class="price-standard">39€</span>
+              <span class="price-card">31€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini klassisch</span>
+            <div class="price-values">
+              <span class="price-standard">22€</span>
+              <span class="price-card">16€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini brasilianisch</span>
+            <div class="price-values">
+              <span class="price-standard">29€</span>
+              <span class="price-card">22€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini - komplett <em>· beliebt</em></span>
+            <div class="price-values">
+              <span class="price-standard">44€</span>
+              <span class="price-card">36€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Gesäß</span>
+            <div class="price-values">
+              <span class="price-standard">22€</span>
+              <span class="price-card">14€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterer Rücken</span>
+            <div class="price-values">
+              <span class="price-standard">25€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Schultern</span>
+            <div class="price-values">
+              <span class="price-standard">30€</span>
+              <span class="price-card">25€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Rücken komplett</span>
+            <div class="price-values">
+              <span class="price-standard">48€</span>
+              <span class="price-card">37€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bauch</span>
+            <div class="price-values">
+              <span class="price-standard">22€</span>
+              <span class="price-card">16€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Brust</span>
+            <div class="price-values">
+              <span class="price-standard">29€</span>
+              <span class="price-card">22€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Achseln</span>
+            <div class="price-values">
+              <span class="price-standard">19€</span>
+              <span class="price-card">13€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterarme</span>
+            <div class="price-values">
+              <span class="price-standard">21€</span>
+              <span class="price-card">18€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Arme komplett</span>
+            <div class="price-values">
+              <span class="price-standard">30€</span>
+              <span class="price-card">24€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Hände/ Füße</span>
+            <div class="price-values">
+              <span class="price-standard">16€</span>
+              <span class="price-card">14€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">Nase / Ohren</span>
+            <div class="price-values">
+              <span class="price-standard">16€</span>
+              <span class="price-card">14€</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUGARING -->
+        <div class="price-table">
+          <h3>SUGARING</h3>
+
+          <div class="price-item">
+            <span class="price-name">Oberschenkel</span>
+            <div class="price-values">
+              <span class="price-standard">39€</span>
+              <span class="price-card">31€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterschenkel</span>
+            <div class="price-values">
+              <span class="price-standard">39€</span>
+              <span class="price-card">31€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Beine - komplett <em>· beliebt</em></span>
+            <div class="price-values">
+              <span class="price-standard">65€</span>
+              <span class="price-card">53€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini klassisch</span>
+            <div class="price-values">
+              <span class="price-standard">28€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini brasilianisch</span>
+            <div class="price-values">
+              <span class="price-standard">37€</span>
+              <span class="price-card">28€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bikini - komplett <em>· beliebt</em></span>
+            <div class="price-values">
+              <span class="price-standard">54€</span>
+              <span class="price-card">43€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Gesäß</span>
+            <div class="price-values">
+              <span class="price-standard">26€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterer Rücken</span>
+            <div class="price-values">
+              <span class="price-standard">31€</span>
+              <span class="price-card">25€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Schultern</span>
+            <div class="price-values">
+              <span class="price-standard">42€</span>
+              <span class="price-card">35€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Rücken komplett</span>
+            <div class="price-values">
+              <span class="price-standard">64€</span>
+              <span class="price-card">53€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Bauch</span>
+            <div class="price-values">
+              <span class="price-standard">26€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Brust</span>
+            <div class="price-values">
+              <span class="price-standard">38€</span>
+              <span class="price-card">28€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Achseln</span>
+            <div class="price-values">
+              <span class="price-standard">27€</span>
+              <span class="price-card">21€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Unterarme</span>
+            <div class="price-values">
+              <span class="price-standard">32€</span>
+              <span class="price-card">26€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Arme komplett</span>
+            <div class="price-values">
+              <span class="price-standard">43€</span>
+              <span class="price-card">32€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Oberlippe</span>
+            <div class="price-values">
+              <span class="price-standard">17€</span>
+              <span class="price-card">13€</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <span class="price-name">Hände / Füße</span>
+            <div class="price-values">
+              <span class="price-standard">19€</span>
+              <span class="price-card">14€</span>
+            </div>
+          </div>
+        </div>
+        <div class="price-table">
+          <h3>AUGENBRAUEN &amp; WIMPERN</h3>
+
+          <div class="price-item">
+            <span class="price-name">Wimpernlifting / Wimpernlaminierung</span>
+            <div class="price-values">
+              <span class="price-standard">65€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">Wimpernlifting + Färben</span>
+            <div class="price-values">
+              <span class="price-standard">75€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">Wimpern färben</span>
+            <div class="price-values">
+              <span class="price-standard">20€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">
+              Augenbrauenmodellierung (Zupfen / Waxing / Fadentechnik)
+            </span>
+            <div class="price-values">
+              <span class="price-standard">28€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">Augenbrauenmodellierung + Färben</span>
+            <div class="price-values">
+              <span class="price-standard">42€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name"
+              >Augenbrauenlaminierung (ohne Modellierung)</span
+            >
+            <div class="price-values">
+              <span class="price-standard">55€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name"
+              >Augenbrauenmodellierung + Laminierung</span
+            >
+            <div class="price-values">
+              <span class="price-standard">70€</span>
+            </div>
+          </div>
+
+          <div class="price-item">
+            <span class="price-name">
+              Komplettpaket (Modellierung + Laminierung + Färben)
+              <em style="font-size: 0.75rem; color: #644d42"> · beliebt</em>
+            </span>
+
+            <div class="price-values">
+              <span class="price-standard">85€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p
+      style="
+        text-align: center;
+        margin-top: 3rem;
+        color: #644d42;
+        font-size: 0.9rem;
+      "
+    >
+      Ruhige Atmosphäre · Hochwertige Produkte · Persönliche Betreuung
+    </p>
+  </body>
+</html>
