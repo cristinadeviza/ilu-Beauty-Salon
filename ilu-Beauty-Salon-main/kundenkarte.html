@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kundenkarte • ilu Aesthetic Studio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style-kundenkarte.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <a href="index.html" class="logo">ilu</a>
+        <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-right">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="preise.html">Behandlungen & Preise</a></li>
+            <li><a href="kundenkarte.html">Kundenkarte</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+          <div class="language-selector">
+            <a href="kundenkarte.html" class="active">DE</a>
+            <a href="kundenkarte-en.html">EN</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✦ Jahres-Abo ✦</div>
+        <h1>Kundenkarte</h1>
+        <p class="hero-subtitle">
+          Zahlen Sie einmal im Jahr für 10-12 Behandlungen zum Vorzugspreis –
+          danach kommen Sie entspannt zum Termin, ohne an der Kasse zu bezahlen!
+        </p>
+        <div class="hero-highlight">
+          Einmal zahlen • 10-12 Behandlungen inklusive • Kein Bezahlen bei jedem
+          Besuch
+        </div>
+        <a href="#benefits" class="cta-button">Vorteile entdecken</a>
+        <a
+          href="https://wa.me/4901637394921?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Kundenkarte"
+          class="cta-button"
+          target="_blank"
+          >Jetzt anfragen</a
+        >
+      </div>
+    </section>
+
+    <div class="comparison-section">
+      <div class="comparison-container">
+        <div class="comparison-image fade-in">
+          <img
+            src=".//image/Bezhalung-Bar.jpg"
+            alt="Bei jedem Besuch zahlen"
+            onerror="this.src = 'image/Bezhalung-Bar.jpg'"
+          />
+          <div class="comparison-label">
+            <h4>Ohne Kundenkarte</h4>
+            <p>Jedes Mal an der Kasse zahlen</p>
+          </div>
+        </div>
+        <div class="comparison-image fade-in">
+          <img
+            src="image/Kundenkarte.png"
+            alt="Vorabgezahlt & entspannt"
+            onerror="this.src = 'image/Kundenkarte.png'"
+          />
+          <div class="comparison-label">
+            <h4>Mit Kundenkarte</h4>
+            <p>Einfach kommen & genießen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-section" style="padding-top: 0">
+      <div class="comparison-container">
+        <div class="comparison-content fade-in">
+          <h3>So funktioniert's</h3>
+          <p>
+            Mit der Kundenkarte zahlen Sie einmalig für 10-12 Behandlungen zum
+            ermäßigten Preis. Die Summe wird im Voraus bezahlt und bei jedem
+            Besuch automatisch verrechnet – Sie müssen nie wieder an der Kasse
+            zahlen!
+          </p>
+          <p>
+            <strong>Beispiel:</strong> Bikini brasilianisch (Waxing) kostet mit
+            Kundenkarte 22€ statt 29€ pro Behandlung. Bei 12 Behandlungen zahlen
+            Sie nur 264€ statt 348€ – Sie sparen 84€ pro Jahr!
+          </p>
+          <div class="comparison-stats">
+            <div class="stat-box scale-in">
+              <div class="stat-number">10-12×</div>
+              <div class="stat-label">Behandlungen vorab bezahlt</div>
+            </div>
+            <div class="stat-box scale-in">
+              <div class="stat-number">0€</div>
+              <div class="stat-label">Pro Besuch zahlen</div>
+            </div>
+          </div>
+        </div>
+        <div class="comparison-image fade-in">
+          <img
+            src=".//image/Beauty-Abo gift.png"
+            alt="Zufriedene Kundin"
+            onerror="this.src = 'image/Beauty-Abo gift.png'"
+          />
+        </div>
+      </div>
+    </div>
+
+    <section id="benefits" class="benefits-section">
+      <h2 class="section-title fade-in">Ihre Vorteile</h2>
+      <p class="section-subtitle fade-in">
+        Deshalb lieben unsere Kunden die Kundenkarte
+      </p>
+
+      <div class="benefits-timeline">
+        <svg class="timeline-svg" id="curvedLines">
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: var(--mocha); stop-opacity: 0"
+              />
+              <stop
+                offset="15%"
+                style="stop-color: var(--mocha); stop-opacity: 0.4"
+              />
+              <stop
+                offset="85%"
+                style="stop-color: var(--mocha); stop-opacity: 0.4"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: var(--mocha); stop-opacity: 0"
+              />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="benefit-item align-left" data-index="0">
+          <div class="benefit-dot"></div>
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">1</span>
+              <span class="benefit-icon"></span>
+              <h3>Bis zu 30% sparen</h3>
+              <p>
+                Profitieren Sie von reduzierten Preisen bei allen Waxing- und
+                Sugaring-Behandlungen. Je mehr Sie nutzen, desto mehr sparen
+                Sie!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-item align-right" data-index="1">
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">2</span>
+              <span class="benefit-icon"></span>
+              <h3>Kein Bezahlen mehr</h3>
+              <p>
+                Sie haben bereits im Voraus bezahlt! Kommen Sie einfach zu Ihren
+                Terminen – ohne Portemonnaie, ohne Karte, ohne Stress.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-dot"></div>
+        </div>
+
+        <div class="benefit-item align-left" data-index="2">
+          <div class="benefit-dot"></div>
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">3</span>
+              <span class="benefit-icon"></span>
+              <h3>10-12 Behandlungen inklusive</h3>
+              <p>
+                Perfekt für regelmäßige Beauty-Routinen. Bei monatlichen
+                Besuchen sind Sie das ganze Jahr abgedeckt.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-item align-right" data-index="3">
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">4</span>
+              <span class="benefit-icon"></span>
+              <h3>Individuell anpassbar</h3>
+              <p>
+                Wählen Sie genau die Behandlungen und Zonen, die Sie regelmäßig
+                brauchen. Keine ungewollten Extras!
+              </p>
+            </div>
+          </div>
+          <div class="benefit-dot"></div>
+        </div>
+
+        <div class="benefit-item align-left" data-index="4">
+          <div class="benefit-dot"></div>
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">5</span>
+              <span class="benefit-icon"></span>
+              <h3>Priorität-Buchung</h3>
+              <p>
+                Als Kundenkarten-Inhaber erhalten Sie bevorzugten Zugang zu
+                begehrten Terminen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-item align-right" data-index="5">
+          <div class="benefit-content-wrapper">
+            <div class="benefit-content">
+              <span class="benefit-number">6</span>
+              <span class="benefit-icon"></span>
+              <h3>Volle Transparenz</h3>
+              <p>
+                Eine Zahlung für das ganze Jahr. Keine versteckten Kosten, keine
+                Überraschungen.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="packages-section">
+      <h2 class="section-title fade-in">Beispiel-Pakete</h2>
+      <p class="section-subtitle fade-in">
+        So könnte Ihr persönliches Jahres-Abo aussehen
+      </p>
+
+      <div class="packages-grid">
+        <div class="package-card scale-in">
+          <h3>Basic Paket</h3>
+          <ul class="package-treatments">
+            <li>Bikini klassisch (Waxing)</li>
+            <li>Achseln (Waxing)</li>
+            <li>12 Behandlungen/Jahr</li>
+          </ul>
+          <div class="package-price">348€ <small>statt 492€</small></div>
+          <p class="package-note">Ersparnis: 144€ pro Jahr</p>
+        </div>
+
+        <div class="package-card scale-in">
+          <div class="package-popular">⭐ BELIEBT</div>
+          <h3>Premium Paket</h3>
+          <ul class="package-treatments">
+            <li>Bikini brasilianisch (Waxing)</li>
+            <li>Beine komplett (Waxing)</li>
+            <li>12 Behandlungen/Jahr</li>
+          </ul>
+          <div class="package-price">636€ <small>statt 816€</small></div>
+          <p class="package-note">Ersparnis: 180€ pro Jahr</p>
+        </div>
+
+        <div class="package-card scale-in">
+          <h3>Complete Paket</h3>
+          <ul class="package-treatments">
+            <li>Bikini brasilianisch (Sugaring)</li>
+            <li>Beine komplett (Sugaring)</li>
+            <li>Achseln (Sugaring)</li>
+            <li>12 Behandlungen/Jahr</li>
+          </ul>
+          <div class="package-price">1.224€ <small>statt 1.548€</small></div>
+          <p class="package-note">Ersparnis: 324€ pro Jahr</p>
+        </div>
+      </div>
+
+      <p
+        style="
+          text-align: center;
+          margin-top: 3rem;
+          color: var(--text-light);
+          font-size: 1.05rem;
+          padding: 0 1rem;
+        "
+      >
+        💡 Ihr Abo wird individuell nach Ihren Wünschen zusammengestellt. Wählen
+        Sie Ihre Behandlungen und wir berechnen Ihren persönlichen Jahrespreis
+        mit Kundenkarten-Rabatt!
+      </p>
+    </div>
+
+    <div class="faq-section">
+      <h2 class="section-title fade-in">Häufig gestellte Fragen</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Wie funktioniert die Kundenkarte genau?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Sie wählen Ihre gewünschten Behandlungen und kaufen 10-12 Termine
+            zum reduzierten Kundenkarten-Preis. Diese Summe zahlen Sie einmal im
+            Voraus. Bei jedem Besuch wird die Behandlung automatisch von Ihrem
+            Guthaben abgezogen – Sie müssen nichts mehr an der Kasse bezahlen!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Muss ich bei jedem Besuch noch zahlen?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Nein! Sie haben bereits alles im Voraus bezahlt. Kommen Sie einfach
+            zu Ihren Terminen – die Behandlung wird automatisch verrechnet, ohne
+            dass Sie an der Kasse zahlen müssen.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Wie viele Behandlungen sind inklusive?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Typischerweise 10-12 Behandlungen pro Jahr, je nach Ihren
+            Bedürfnissen. Bei monatlichen Besuchen wären das 12 Behandlungen,
+            bei Besuchen alle 5-6 Wochen etwa 10 Behandlungen.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Was ist, wenn ich nicht alle Behandlungen nutze?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Das Guthaben ist 12 Monate gültig. Nicht genutzte Behandlungen
+            verfallen nach Ablauf und können nicht erstattet werden. Wir
+            empfehlen, Termine regelmäßig zu planen!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Kann ich verschiedene Zonen kombinieren?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Sie können mehrere Behandlungszonen wählen (z.B. Bikini + Beine
+            + Achseln). Bei jedem Termin werden dann alle gewählten Zonen
+            behandelt und vom Guthaben abgezogen.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Spare ich wirklich mit der Kundenkarte?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Mit der Kundenkarte zahlen Sie bis zu 30% weniger pro
+            Behandlung. Beispiel: Bikini brasilianisch (Waxing) kostet normal
+            29€, mit Karte nur 22€. Bei 12 Behandlungen sparen Sie 84€ pro Jahr!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Kann ich die Karte mit anderen teilen?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Nein, die Kundenkarte ist persönlich und nicht übertragbar. Sie gilt
+            nur für die Person, auf die sie ausgestellt wurde.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <div class="final-cta-content">
+        <h2>Bereit für Ihre Kundenkarte?</h2>
+        <p>
+          Lassen Sie uns gemeinsam Ihr individuelles Jahres-Abo zusammenstellen!
+          Wir berechnen Ihren persönlichen Preis mit Kundenkarten-Rabatt für
+          10-12 Behandlungen.
+        </p>
+        <a
+          href="https://wa.me/4901637394921?text=Hallo%2C%20ich%20m%C3%B6chte%20mehr%20%C3%BCber%20die%20Kundenkarte%20erfahren"
+          class="cta-button"
+          target="_blank"
+          >💬 Jetzt per WhatsApp anfragen</a
+        >
+        <a href="tel:+4901637394921" class="cta-button"
+          >📞 Anrufen & beraten lassen</a
+        >
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo, Mi, Fr: 10:00 - 15:00</p>
+          <p>Di, Do: 12:00 - 19:00</p>
+          <p>Sa: 12:00 - 16:00</p>
+          <p>So: Geschlossen</p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>📞 +49 0163 7394921</p>
+          <p>✉️ ilu.aestethicstudio@gmail.com</p>
+          <p>📍 Egenolffstraße 19, Frankfurt am Main</p>
+        </div>
+        <div class="footer-section">
+          <h3>Folgen Sie uns</h3>
+          <a
+            href="https://www.instagram.com/ilu_concept?igsh=ODVlOWlkY2FuaXVm&utm_source=qr"
+            target="_blank"
+            class="instagram-button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.347 3.608 1.322.975.975 1.26 2.242 1.322 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.849c-.062 1.366-.347 2.633-1.322 3.608-.975.975-2.242 1.26-3.608 1.322-1.265.058-1.645.069-4.849.069s-3.584-.012-4.849-.07c-1.366-.062-2.633-.347-3.608-1.322-.975-.975-1.26-2.242-1.322-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.347-2.633 1.322-3.608.975-.975 2.242-1.26 3.608-1.322C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.775.128 4.602.386 3.635 1.353 2.668 2.32 2.41 3.493 2.352 4.77.012 8.332 0 8.741 0 12s.012 3.668.07 4.948c.058 1.277.316 2.45 1.283 3.417.967.967 2.14 1.225 3.417 1.283C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.277-.058 2.45-.316 3.417-1.283.967-.967 1.225-2.14 1.283-3.417.058-1.28.07-1.689.07-4.948s-.012-3.668-.07-4.948c-.058-1.277-.316-2.45-1.283-3.417C19.398.386 18.225.128 16.948.07 15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0-2.881 0 1.44 1.44 0 0 0 2.881 0z"
+              />
+            </svg>
+            @ilu.aestheticstudio
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten</p>
+      </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+      <div class="floating-contact-item">
+        <a
+          href="https://wa.me/4901637394921?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20buchen"
+          target="_blank"
+          class="contact-button whatsapp-button"
+          aria-label="WhatsApp Kontakt"
+        >
+          <span class="contact-button-label">WhatsApp</span>
+          💬
+        </a>
+      </div>
+      <div class="floating-contact-item">
+        <a
+          href="tel:+4901637394921"
+          class="contact-button phone-button"
+          aria-label="Anrufen"
+        >
+          <span class="contact-button-label">Anrufen</span>
+          📞
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        faqItem.classList.toggle("active");
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            const offset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Create curved connecting lines between cards (hidden under cards)
+      function drawCurvedLines() {
+        const svg = document.getElementById("curvedLines");
+        const items = document.querySelectorAll(".benefit-item");
+
+        if (items.length < 2 || window.innerWidth < 968) {
+          svg.innerHTML = "";
+          return;
+        }
+
+        svg.innerHTML = "";
+
+        items.forEach((item, index) => {
+          if (index < items.length - 1) {
+            const currentCard = item.querySelector(".benefit-content");
+            const nextItem = items[index + 1];
+            const nextCard = nextItem.querySelector(".benefit-content");
+
+            if (currentCard && nextCard) {
+              const currentRect = currentCard.getBoundingClientRect();
+              const nextRect = nextCard.getBoundingClientRect();
+              const svgRect = svg.getBoundingClientRect();
+
+              // Start from bottom of current card
+              const x1 =
+                currentRect.left + currentRect.width / 2 - svgRect.left;
+              const y1 = currentRect.bottom - svgRect.top;
+
+              // End at top of next card
+              const x2 = nextRect.left + nextRect.width / 2 - svgRect.left;
+              const y2 = nextRect.top - svgRect.top;
+
+              // Create smooth flowing S-curve with more pronounced curvature
+              const distance = Math.abs(y2 - y1);
+              const curveOffset = distance * 0.6; // More curve
+
+              const cp1y = y1 + curveOffset;
+              const cp2y = y2 - curveOffset;
+
+              const pathData = `M ${x1},${y1} C ${x1},${cp1y} ${x2},${cp2y} ${x2},${y2}`;
+
+              const path = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "path",
+              );
+              path.setAttribute("d", pathData);
+              path.setAttribute("stroke", "url(#lineGradient)");
+              path.dataset.index = index;
+
+              svg.appendChild(path);
+            }
+          }
+        });
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const benefitObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+
+            // Animate line when content becomes visible
+            const item = entry.target.closest(".benefit-item");
+            if (item) {
+              const index = parseInt(item.dataset.index);
+              const path = document.querySelector(
+                `#curvedLines path[data-index="${index}"]`,
+              );
+              if (path) {
+                setTimeout(() => {
+                  path.classList.add("animate");
+                }, 400);
+              }
+            }
+          }
+        });
+      }, observerOptions);
+
+      const generalObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // General animations
+        const animatedElements = document.querySelectorAll(
+          ".fade-in, .scale-in",
+        );
+        animatedElements.forEach((el) => {
+          generalObserver.observe(el);
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add("visible");
+          }
+        });
+
+        // Benefit animations
+        const benefitWrappers = document.querySelectorAll(
+          ".benefit-content-wrapper",
+        );
+        benefitWrappers.forEach((el) => benefitObserver.observe(el));
+
+        // Draw curved lines
+        drawCurvedLines();
+
+        // Redraw on resize
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(drawCurvedLines, 250);
+        });
+
+        // Redraw on scroll (for dynamic positioning)
+        let scrollTimeout;
+        window.addEventListener("scroll", () => {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(drawCurvedLines, 100);
+        });
+      });
+
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.style.boxShadow = "0 4px 30px rgba(38, 20, 12, 0.3)";
+        } else {
+          nav.style.boxShadow = "0 2px 20px rgba(38, 20, 12, 0.15)";
+        }
+      });
+    </script>
+  </body>
+</html>

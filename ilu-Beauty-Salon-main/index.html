@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <meta
+      name="description"
+      content="ilu Aesthetic Studio Frankfurt – Professionelle Wimpern, Augenbrauen, Sugaring und Waxing Behandlungen. Luxuriöses Beauty Studio im Herzen von Frankfurt."
+    />
+    <meta
+      name="keywords"
+      content="Wimpernlifting Frankfurt, Augenbrauen Frankfurt, Brow Lifting Frankfurt, Sugaring Frankfurt, Waxing Frankfurt, Beauty Studio Frankfurt"
+    />
+    <meta name="author" content="ilu Aesthetic Studio Frankfurt" />
+
+    <link rel="canonical" href="https://www.ilu-frankfurt.de/" /> -->
+
+    <!-- Open Graph -->
+    <!-- <meta property="og:title" content="ilu • Aesthetic Studio Frankfurt" />
+    <meta
+      property="og:description"
+      content="Professionelle Wimpern- und Augenbrauenbehandlungen, Waxing & Sugaring in luxuriösem Ambiente."
+    />
+    <meta
+      property="og:image"
+      content="https://www.ilu-frankfurt.de/image/cover.jpg"
+    />
+    <meta property="og:url" content="https://www.ilu-frankfurt.de/" />
+    <meta property="og:type" content="website" /> -->
+
+    <!-- Instagram & WhatsApp Preview -->
+    <!-- <meta name="theme-color" content="#d5c1b8" /> -->
+
+    <title>ilu • Aesthetic Studio Frankfurt</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style-index.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-content">
+        <div class="logo">ilu</div>
+        <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-right">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="preise.html">Behandlungen & Preise</a></li>
+            <li><a href="kundenkarte.html">Kundenkarte</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+          <div class="language-selector">
+            <a href="index.html" class="active">DE</a>
+            <a href="index-en.html">EN</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>ilu</h1>
+        <p class="hero-subtitle">Aesthetic Studio Frankfurt</p>
+        <p class="hero-description">
+          Willkommen in Ihrem exklusiven Beauty-Refugium. Erleben Sie
+          professionelle Wimpern- und Augenbrauenbehandlungen sowie sanfte
+          Haarentfernung in luxuriösem Ambiente.
+        </p>
+        <a href="#kontakt" class="cta-button">Termin buchen</a>
+      </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <div class="gallery-preview">
+      <div class="gallery-item">
+        <img
+          src=".//image/Augenbrauenbehandlung.jpg"
+          alt="Augenbrauenbehandlung"
+        />
+      </div>
+      <div class="gallery-item">
+        <img src=".//image/waxing.jpg" alt="Waxing" />
+      </div>
+      <div class="gallery-item">
+        <img src=".//image/wimpernbehandlung.jpg" alt="Wimpernbehandlung" />
+      </div>
+      <div class="gallery-item">
+        <img src=".//image/Sugaring.jpg" alt="Sugaring" />
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section fade-in">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Zufriedene Kunden</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1+</div>
+          <div class="stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Qualität</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Behandlungen</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Behandlungen Section -->
+    <section id="behandlungen">
+      <h2 class="section-title fade-in">Behandlungen</h2>
+      <p class="section-subtitle fade-in">
+        Entdecken Sie unsere exklusiven Beauty-Services, individuell auf Ihre
+        Bedürfnisse abgestimmt.
+      </p>
+      <div class="services-grid">
+        <div class="service-card slide-in-left">
+          <div class="service-image">
+            <img src=".//image/Laminierung.png" alt="Wimpernbehandlung" />
+          </div>
+          <div class="service-content">
+            <div class="service-icon"></div>
+            <h3>Wimpern</h3>
+            <p>
+              Perfekte Wimpern für einen verführerischen Blick. Wimpernlifting
+              und Laminierung verleihen Ihren Wimpern natürliche Länge und
+              Schwung. Optional mit Färbung für einen intensiveren Look.
+            </p>
+          </div>
+        </div>
+        <div class="service-card slide-in-right">
+          <div class="service-image">
+            <img
+              src=".//image/Styling-Augenbrauen.jpg"
+              alt="Augenbrauenbehandlung"
+            />
+          </div>
+          <div class="service-content">
+            <div class="service-icon"></div>
+            <h3>Augenbrauen</h3>
+            <p>
+              Präzise Augenbrauenmodellierung durch Zupfen, Waxing oder
+              Fadentechnik. Augenbrauenlaminierung für perfekt geformte und
+              definierte Brauen. Komplettpaket mit Modellierung, Laminierung und
+              Färbung.
+            </p>
+          </div>
+        </div>
+        <div class="service-card slide-in-left">
+          <div class="service-image">
+            <img src=".//image/Waxinf-behandlung.png" alt="Waxing Behandlung" />
+          </div>
+          <div class="service-content">
+            <div class="service-icon"></div>
+            <h3>Waxing</h3>
+            <p>
+              Professionelle Haarentfernung mit Wachs für alle Körperbereiche.
+              Schnell, effektiv und langanhaltend glatte Haut. Von Beinen über
+              Bikinizone bis zu Gesicht und Rücken.
+            </p>
+          </div>
+        </div>
+        <div class="service-card slide-in-right">
+          <div class="service-image">
+            <img src=".//image/Sugaring-pasta.png" alt="Sugaring Behandlung" />
+          </div>
+          <div class="service-content">
+            <div class="service-icon"></div>
+            <h3>Sugaring</h3>
+            <p>
+              Schonende Haarentfernung mit natürlicher Zuckerpaste. Besonders
+              hautfreundlich und für empfindliche Haut geeignet. Weniger
+              Irritationen und länger anhaltende Ergebnisse.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <div class="before-after-section">
+      <h2 class="section-title fade-in">Unsere Ergebnisse</h2>
+      <p class="section-subtitle fade-in">
+        Sehen Sie die beeindruckende Transformation unserer Behandlungen
+      </p>
+      <div class="before-after-grid">
+        <div class="before-after-item scale-in">
+          <div class="before-after-images">
+            <img
+              src=".//image/Wimpern Vorher Nachher.png"
+              alt="Wimpern Vorher Nachher"
+            />
+          </div>
+          <div class="before-after-label">
+            <h4>Wimpernlifting</h4>
+            <p>Natürlicher Schwung ohne Extensions</p>
+          </div>
+        </div>
+        <div class="before-after-item scale-in">
+          <div class="before-after-images">
+            <img
+              src=".//image/Augenbrauen Vorher Nachher.png"
+              alt="Augenbrauen Vorher Nachher"
+            />
+          </div>
+          <div class="before-after-label">
+            <h4>Augenbrauenlaminierung</h4>
+            <p>Perfekt definierte Form</p>
+          </div>
+        </div>
+        <div class="before-after-item scale-in">
+          <div class="before-after-images">
+            <img src=".//image/Sugaring Ergebnis.png" alt="Glatte Haut" />
+          </div>
+          <div class="before-after-label">
+            <h4>Sugaring Ergebnis</h4>
+            <p>Seidig glatte Haut für Wochen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials-section">
+      <h2 class="section-title fade-in">Was unsere Kunden sagen</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Das beste Studio für Wimpernlifting in Frankfurt! Die Ergebnisse
+            sind immer perfekt und das Ambiente ist so entspannend. Ich komme
+            seit einem Jahr hierher und bin jedes Mal begeistert."
+          </p>
+          <p class="testimonial-author">— Sarah M.</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Professionell, hygienisch und mit viel Liebe zum Detail. Die
+            Augenbrauenlaminierung hält super lange und sieht natürlich aus.
+            Absolute Empfehlung!"
+          </p>
+          <p class="testimonial-author">— Lisa K.</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Das Sugaring ist viel weniger schmerzhaft als Waxing und die Haut
+            bleibt länger glatt. Mit der Kundenkarte spare ich auch noch richtig
+            Geld. Top Service!"
+          </p>
+          <p class="testimonial-author">— Anna B.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preise Section -->
+    <section id="preise">
+      <h2 class="section-title fade-in">Preise</h2>
+      <p class="section-subtitle fade-in">
+        Sehen Sie unsere vollständige Preisliste und lernen Sie unser Team
+        kennen
+      </p>
+      <div style="text-align: center; padding: 3rem 0">
+        <a href="preise.html" class="cta-button"
+          >Zur detaillierten Preisliste</a
+        >
+      </div>
+    </section>
+
+    <!-- Kundenkarte Section -->
+    <section id="kundenkarte">
+      <h2 class="section-title">Kundenkarte</h2>
+      <div class="kundenkarte-box">
+        <div class="kundenkarte-content">
+          <h3>Jahres-Abo mit Vorzugspreis</h3>
+          <p>
+            Zahlen Sie einmal im Jahr für 10-12 Behandlungen zum ermäßigten
+            Preis – danach kommen Sie entspannt zu Ihren Terminen, ohne an der
+            Kasse zu bezahlen!
+          </p>
+          <div class="kundenkarte-price">Bis zu 30% sparen</div>
+          <ul class="benefits-list">
+            <li>10-12 Behandlungen vorab zum Vorzugspreis bezahlt</li>
+            <li>Kein Bezahlen mehr bei jedem Besuch</li>
+            <li>Bis zu 30% günstiger als Einzelbehandlungen</li>
+            <li>Individuell nach Ihren Wünschen zusammengestellt</li>
+            <li>12 Monate gültig ab Kaufdatum</li>
+            <li>Priorität bei der Terminvergabe</li>
+          </ul>
+          <a href="kundenkarte.html" class="cta-button" style="margin-top: 2rem"
+            >Mehr über Kundenkarte erfahren</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt">
+      <h2 class="section-title">Kontakt</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h4>Adresse</h4>
+            <p>
+              📍 Egenolffstraße 19<br />
+              60316 Frankfurt am Main, Hessen
+            </p>
+          </div>
+          <div class="contact-item">
+            <h4>Telefon</h4>
+            <p>📞 <a href="tel:+4901637394921">+49 0163 7394921</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Email</h4>
+            <p>
+              ✉️
+              <a href="mailto:ilu.aestethicstudio@gmail.com"
+                >ilu.aestethicstudio@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="contact-item">
+            <h4>WhatsApp</h4>
+            <a
+              href="https://wa.me/4901637394921"
+              class="whatsapp-button"
+              target="_blank"
+            >
+              💬 WhatsApp Nachricht senden
+            </a>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.0524743829567!2d8.703571976928836!3d50.11226871121815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ea4c32c7677%3A0x1e94c1b2de18f1ca!2sEgenolffstra%C3%9Fe%2019%2C%2060316%20Frankfurt%20am%20Main!5e0!3m2!1sen!2sde!4v1706876543210!5m2!1sen!2sde"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <p>Mo, Mi, Fr: 10:00 - 15:00</p>
+          <p>Di, Do: 12:00 - 19:00</p>
+          <p>Sa: 12:00 - 16:00</p>
+          <p>So: Geschlossen</p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>📞 +49 0163 7394921</p>
+          <p>✉️ ilu.aestethicstudio@gmail.com</p>
+          <p>📍 Egenolffstraße 19, Frankfurt</p>
+        </div>
+        <div class="footer-section">
+          <h3>Folgen Sie uns</h3>
+          <a
+            href="https://www.instagram.com/ilu_concept?igsh=ODVlOWlkY2FuaXVm&utm_source=qr"
+            target="_blank"
+            class="instagram-button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.347 3.608 1.322.975.975 1.26 2.242 1.322 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.849c-.062 1.366-.347 2.633-1.322 3.608-.975.975-2.242 1.26-3.608 1.322-1.265.058-1.645.069-4.849.069s-3.584-.012-4.849-.07c-1.366-.062-2.633-.347-3.608-1.322-.975-.975-1.26-2.242-1.322-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.347-2.633 1.322-3.608.975-.975 2.242-1.26 3.608-1.322C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.775.128 4.602.386 3.635 1.353 2.668 2.32 2.41 3.493 2.352 4.77.012 8.332 0 8.741 0 12s.012 3.668.07 4.948c.058 1.277.316 2.45 1.283 3.417.967.967 2.14 1.225 3.417 1.283C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.277-.058 2.45-.316 3.417-1.283.967-.967 1.225-2.14 1.283-3.417.058-1.28.07-1.689.07-4.948s-.012-3.668-.07-4.948c-.058-1.277-.316-2.45-1.283-3.417C19.398.386 18.225.128 16.948.07 15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0-2.881 0 1.44 1.44 0 0 0 2.881 0z"
+              />
+            </svg>
+            @ilu.aestheticstudio
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten</p>
+      </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+      <div class="floating-contact-item">
+        <a
+          href="https://wa.me/4901637394921?text=Hallo%2C%20ich%20m%C3%B6chte%20einen%20Termin%20buchen"
+          target="_blank"
+          class="contact-button whatsapp-button"
+          aria-label="WhatsApp Kontakt"
+        >
+          <span class="contact-button-label">WhatsApp</span>
+          💬
+        </a>
+      </div>
+      <div class="floating-contact-item">
+        <a
+          href="tel:+4901637394921"
+          class="contact-button phone-button"
+          aria-label="Anrufen"
+        >
+          <span class="contact-button-label">Anrufen</span>
+          📞
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            const offset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+
+          // Close mobile menu after clicking
+          const navLinks = document.getElementById("navLinks");
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Change navigation background on scroll
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.style.boxShadow = "0 4px 30px rgba(38, 20, 12, 0.3)";
+        } else {
+          nav.style.boxShadow = "0 2px 20px rgba(38, 20, 12, 0.15)";
+        }
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll(
+          ".fade-in, .slide-in-left, .slide-in-right, .scale-in",
+        );
+        animatedElements.forEach((el) => observer.observe(el));
+
+        // Animate stats numbers
+        const statNumbers = document.querySelectorAll(".stat-number");
+        const statsObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = target.textContent;
+                const numericValue = parseInt(finalValue.replace(/\D/g, ""));
+
+                if (!isNaN(numericValue)) {
+                  let current = 0;
+                  const increment = numericValue / 50;
+                  const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                      target.textContent = finalValue;
+                      clearInterval(timer);
+                    } else {
+                      target.textContent =
+                        Math.floor(current) +
+                        (finalValue.includes("+")
+                          ? "+"
+                          : finalValue.includes("%")
+                            ? "%"
+                            : "");
+                    }
+                  }, 30);
+                }
+                statsObserver.unobserve(target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        statNumbers.forEach((stat) => statsObserver.observe(stat));
+      });
+
+      // Add parallax effect to hero
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector(".hero");
+        if (hero) {
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+    </script>
+  </body>
+</html>
