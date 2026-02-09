@@ -71,17 +71,18 @@ nav {
   color: var(--cream);
   text-transform: lowercase;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   list-style: none;
 }
 
@@ -673,9 +674,7 @@ footer {
     max-width: 400px;
     margin: 0 auto;
   }
-}
 
-@media (max-width: 768px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -693,8 +692,18 @@ footer {
     display: flex;
   }
 
+  .nav-content {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
   .mobile-menu-toggle {
     display: block;
+    order: -1;
+  }
+
+  .nav-right {
+    margin-left: auto;
   }
 
   .logo {
@@ -705,7 +714,9 @@ footer {
   nav {
     padding: 1rem 1.5rem;
   }
+}
 
+@media (max-width: 768px) {
   .page-header {
     padding: 4rem 1.5rem 2rem;
   }
@@ -762,38 +773,38 @@ footer {
   }
 
   .price-item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
     padding: 1rem 0;
   }
 
   .price-name {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .price-dual {
-    gap: 2rem;
-    justify-content: flex-start;
+    gap: 1.5rem;
+    justify-content: flex-end;
   }
 
   .price-regular,
   .price-with-card {
-    text-align: left;
-    min-width: 50px;
-    font-size: 1rem;
+    text-align: right;
+    min-width: 40px;
+    font-size: 0.85rem;
   }
 
   .price-value {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .price-list-header {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     gap: 1rem;
   }
 
   .price-list-header-prices {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .price-note {
