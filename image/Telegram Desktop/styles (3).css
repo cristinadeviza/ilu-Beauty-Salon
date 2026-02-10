@@ -1,0 +1,45 @@
+body {
+	background-color: #e5e5e5;
+	font-family: "Montserrat Alternates", sans-serif;
+}
+
+.main-section {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 1200px;
+	margin-left: 15%;
+}
+
+.right-section {
+	padding-left: 88px;
+	padding-right: 30px;
+	background-color: #fff;
+}
+
+.sidebar-section {
+	background-color: #1e2939;
+	width: 370px;
+}
+
+.sidebar-section img {
+	margin-top: 40px;
+	width: 370px;
+	height: 350px;
+}
+
+.about-me-profesion {
+	font-size: 14px;
+	color: black;
+}
+
+.about-me-section {
+	background-color: red;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	padding-right: 15px;
+	margin-bottom: 15px;
+}
+
+.work-experience-section {
+	background-color: aqua;
+}

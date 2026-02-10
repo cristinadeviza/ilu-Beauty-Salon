@@ -1,0 +1,37 @@
+body {
+    background-color: #E5E5E5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.right-section {
+    padding: left 88px;
+    margin-left: 50px;
+}
+
+.about-me-profesion {
+    font-size: 14px;
+    color: black;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1200px;
+    margin: 40px auto;
+}
+
+.about-me-section {
+    background-color: red;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+.work-experience-section {
+    background-color: aqua;
+}
+
+.sidebar-section {
+    background-color: #1E2939;
+}
