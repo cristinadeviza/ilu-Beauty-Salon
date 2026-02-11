@@ -1042,6 +1042,13 @@ footer {
   }
 }
 
+@media (max-width: 1023px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 0 1rem;
@@ -1117,11 +1124,6 @@ footer {
   .before-after-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
 
   .stat-number {
