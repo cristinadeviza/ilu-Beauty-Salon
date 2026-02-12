@@ -1,18 +1,29 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Cookiebot Consent Management -->
+    <script
+      id="Cookiebot"
+      src="https://consent.cookiebot.com/uc.js"
+      data-cbid="85fbd661-6ec4-42d1-aecf-edbbd04a08de"
+      data-blockingmode="auto"
+      type="text/javascript"
+    ></script>
+
+    <!-- Google tag (gtag.js) - blocked until cookie consent -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-GCESVR7HGB"
+      type="text/plain"
+      data-cookieconsent="statistics"
     ></script>
-    <script>
+    <script type="text/plain" data-cookieconsent="statistics">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-GCESVR7HGB");
+      gtag("config", "G-GCESVR7HGB", { anonymize_ip: true });
     </script>
 
     <meta charset="UTF-8" />
@@ -339,7 +350,7 @@
             <p>
               ✉️
               <a href="mailto:ilu.aestethicstudio@gmail.com"
-                >ilu.aestethicstudio@gmail.com</a
+                >iluconcept2026@gmail.com</a
               >
             </p>
           </div>
@@ -405,7 +416,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten</p>
+        <p>
+          © 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten
+          <br />
+          <a href="impressum.html" style="color: var(--cream); margin-right: 1.5rem;">Impressum</a>
+          <a href="datenschutz.html" style="color: var(--cream);">Datenschutzerklärung</a>
+        </p>
       </div>
     </footer>
 

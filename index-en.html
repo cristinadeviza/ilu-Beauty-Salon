@@ -1,18 +1,29 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Cookiebot Consent Management -->
+    <script
+      id="Cookiebot"
+      src="https://consent.cookiebot.com/uc.js"
+      data-cbid="85fbd661-6ec4-42d1-aecf-edbbd04a08de"
+      data-blockingmode="auto"
+      type="text/javascript"
+    ></script>
+
+    <!-- Google tag (gtag.js) - blocked until cookie consent -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-GCESVR7HGB"
+      type="text/plain"
+      data-cookieconsent="statistics"
     ></script>
-    <script>
+    <script type="text/plain" data-cookieconsent="statistics">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-GCESVR7HGB");
+      gtag("config", "G-GCESVR7HGB", { anonymize_ip: true });
     </script>
 
     <meta charset="UTF-8" />
@@ -372,7 +383,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 ilu • Aesthetic Studio Frankfurt • All Rights Reserved</p>
+        <p>
+          © 2026 ilu • Aesthetic Studio Frankfurt • All Rights Reserved
+          <br />
+          <a href="impressum-en.html" style="color: var(--cream); margin-right: 1.5rem;">Legal Notice</a>
+          <a href="datenschutz-en.html" style="color: var(--cream);">Privacy Policy</a>
+        </p>
       </div>
     </footer>
 
