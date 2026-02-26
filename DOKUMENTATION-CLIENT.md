@@ -221,7 +221,6 @@ Eine Seite mit:
 - Cookiebot als Cookie-Management-Tool
 - Google Analytics 4 Beschreibung
 
-**Empfehlung:** Professionelle Datenschutzerklaerung erstellen lassen (z.B. ueber einen Rechtsanwalt oder einen Generator wie e-recht24.de).
 
 #### c) Cookie-Richtlinie
 Cookiebot kann automatisch eine Cookie-Richtlinie generieren. Diese sollte auf der Website verlinkt werden.
