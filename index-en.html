@@ -23,6 +23,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style-index-en.css" />
+    <!-- Treatwell Booking Widget -->
+    <link
+      rel="stylesheet"
+      href="https://buchung.treatwell.de/common/venue-menu/css/widget-button.css"
+      media="screen"
+    />
+    <script src="https://buchung.treatwell.de/common/venue-menu/javascript/widget-button.js?v1"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -55,7 +62,22 @@
           lash and brow treatments as well as gentle hair removal in a luxurious
           atmosphere.
         </p>
-        <a href="#kontakt" class="cta-button">Book Appointment</a>
+        <!-- <a href="#kontakt" class="cta-button">Book Appointment</a> -->
+                <div
+          id="wahanda-online-booking-widget-iframe"
+          data-widget-url="https://buchung.treatwell.de/ort/519743/menue/"
+          style="display: none"
+        ></div>
+
+        <!-- Dein eigener Button öffnet das Widget -->
+        <a
+          href="https://buchung.treatwell.de/ort/519743/menue/"
+          target="_blank"
+          class="cta-button"
+        >
+          Book Appointment
+        </a>
+      </div>
       </div>
     </section>
 
@@ -375,8 +397,14 @@
         <p>
           © 2026 ilu • Aesthetic Studio Frankfurt • All Rights Reserved
           <br />
-          <a href="impressum-en.html" style="color: var(--cream); margin-right: 1.5rem;">Legal Notice</a>
-          <a href="datenschutz-en.html" style="color: var(--cream);">Privacy Policy</a>
+          <a
+            href="impressum-en.html"
+            style="color: var(--cream); margin-right: 1.5rem"
+            >Legal Notice</a
+          >
+          <a href="datenschutz-en.html" style="color: var(--cream)"
+            >Privacy Policy</a
+          >
         </p>
       </div>
     </footer>
