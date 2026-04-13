@@ -939,6 +939,7 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 0;
   text-decoration: none;
   color: white;
   border: none;
