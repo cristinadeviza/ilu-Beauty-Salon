@@ -17,7 +17,8 @@
 ## Ionos Passwort
 
 <!-- d.nedelcu95@gmail.com
-011219901610199526012022e.zeru.n.edelcu -->
+Doina.n9Nedelcu.d1995 pentru ionos
+011219901610199526012022e.zeru.n.edelcu aceasta parola e pentru server-->
 
 ## 1. Technische Dokumentation
 
