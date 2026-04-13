@@ -882,6 +882,14 @@ footer {
   border: none;
 }
 
+.treatwell-button {
+  background-color: #c9a96e;
+  color: white;
+}
+.treatwell-button:hover {
+  background-color: #b08a4e;
+}
+
 .whatsapp-button {
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
 }
