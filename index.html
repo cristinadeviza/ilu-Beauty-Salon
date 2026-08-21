@@ -17,6 +17,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.png" type="image/png" />
 
     <meta
       name="description"
@@ -63,6 +64,62 @@
   </head>
 
   <body>
+    <!-- Pakete Popup -->
+    <div class="ilu-pkg-overlay" id="iluPkgOverlay">
+      <div class="ilu-pkg-card">
+        <button class="ilu-pkg-close" id="iluPkgClose" aria-label="Schließen">
+          ×
+        </button>
+
+        <a class="ilu-pkg-link" href="kundenkarte.html">
+          <div class="ilu-pkg-header">
+            <span class="ilu-pkg-badge">✦ Komplettpakete ✦</span>
+            <h2>Unsere Pakete</h2>
+            <p>Ganzkörper & Oberkörper für Damen</p>
+          </div>
+
+          <div class="ilu-pkg-table">
+            <div class="ilu-pkg-row ilu-pkg-row-head">
+              <span class="ilu-pkg-name"></span>
+              <span>Wax</span>
+              <span>Sugar</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                „Ganzkörper" Damen
+                <small
+                  >Arme, Beine, Brazilian Hollywood Cut, Achseln, Gesicht</small
+                >
+              </span>
+              <span class="ilu-pkg-price">154 €</span>
+              <span class="ilu-pkg-price">179 €</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                „Ganzkörper light" Damen
+                <small>Beine, Achseln, Brazilian Hollywood Cut</small>
+              </span>
+              <span class="ilu-pkg-price">89 €</span>
+              <span class="ilu-pkg-price">109 €</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                „Oberkörper" Damen
+                <small>Brust, Bauch, Rücken, Schulter, Achseln</small>
+              </span>
+              <span class="ilu-pkg-price">74 €</span>
+              <span class="ilu-pkg-price">99 €</span>
+            </div>
+          </div>
+
+          <div class="ilu-pkg-cta">Alle Pakete ansehen →</div>
+        </a>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
       <div class="nav-content">
@@ -72,7 +129,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="preise.html">Behandlungen & Preise</a></li>
-            <li><a href="kundenkarte.html">Kundenkarte</a></li>
+            <li><a href="kundenkarte.html">Pakete</a></li>
             <li><a href="index.html#kontakt">Kontakt</a></li>
           </ul>
           <div class="language-selector">
@@ -118,16 +175,16 @@
         <img
           src=".//image/Augenbrauenbehandlung.jpg"
           alt="Augenbrauenbehandlung"
-        />
+         loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src=".//image/Waxing.jpg" alt="Waxing" />
+        <img src=".//image/Waxing.jpg" alt="Waxing"  loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src=".//image/wimpernbehandlung.jpg" alt="Wimpernbehandlung" />
+        <img src=".//image/wimpernbehandlung.jpg" alt="Wimpernbehandlung"  loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src=".//image/Sugaring.jpg" alt="Sugaring" />
+        <img src=".//image/Sugaring.jpg" alt="Sugaring"  loading="lazy"/>
       </div>
     </div>
 
@@ -135,7 +192,7 @@
     <div class="stats-section fade-in">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">150+</div>
+          <div class="stat-number">200+</div>
           <div class="stat-label">Zufriedene Kunden</div>
         </div>
         <div class="stat-item">
@@ -163,7 +220,7 @@
       <div class="services-grid">
         <div class="service-card slide-in-left">
           <div class="service-image">
-            <img src=".//image/Laminierung.png" alt="Wimpernbehandlung" />
+            <img src=".//image/Laminierung.png" alt="Wimpernbehandlung"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -180,7 +237,7 @@
             <img
               src=".//image/Styling-Augenbrauen.jpg"
               alt="Augenbrauenbehandlung"
-            />
+             loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -195,7 +252,7 @@
         </div>
         <div class="service-card slide-in-left">
           <div class="service-image">
-            <img src=".//image/Waxinf-behandlung.png" alt="Waxing Behandlung" />
+            <img src=".//image/Waxinf-behandlung.png" alt="Waxing Behandlung"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -209,7 +266,7 @@
         </div>
         <div class="service-card slide-in-right">
           <div class="service-image">
-            <img src=".//image/Sugaring-pasta.png" alt="Sugaring Behandlung" />
+            <img src=".//image/Sugaring-pasta.jpg" alt="Sugaring Behandlung"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -234,9 +291,9 @@
         <div class="before-after-item scale-in">
           <div class="before-after-images">
             <img
-              src=".//image/Wimpern Vorher Nachher.png"
+              src=".//image/Wimpern Vorher Nachher.jpg"
               alt="Wimpern Vorher Nachher"
-            />
+             loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Wimpernlifting</h4>
@@ -246,9 +303,9 @@
         <div class="before-after-item scale-in">
           <div class="before-after-images">
             <img
-              src=".//image/Augenbrauen Vorher Nachher.png"
+              src=".//image/Augenbrauen Vorher Nachher.jpg"
               alt="Augenbrauen Vorher Nachher"
-            />
+             loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Augenbrauenlaminierung</h4>
@@ -257,7 +314,7 @@
         </div>
         <div class="before-after-item scale-in">
           <div class="before-after-images">
-            <img src=".//image/Sugaring Ergebnis.png" alt="Glatte Haut" />
+            <img src=".//image/Sugaring Ergebnis.jpg" alt="Glatte Haut"  loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Sugaring Ergebnis</h4>
@@ -271,73 +328,148 @@
     <div class="testimonials-section">
       <h2 class="section-title fade-in">Was unsere Kunden sagen</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Das beste Studio für Wimpernlifting in Frankfurt! Die Ergebnisse
-            sind immer perfekt und das Ambiente ist so entspannend. "
-          </p>
-          <p class="testimonial-author">— Sarah M.</p>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Professionell, hygienisch und mit viel Liebe zum Detail. Die
-            Augenbrauenlaminierung hält super lange und sieht natürlich aus.
-            Absolute Empfehlung!"
-          </p>
-          <p class="testimonial-author">— Lisa K.</p>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Das Sugaring ist viel weniger schmerzhaft als Waxing und die Haut
-            bleibt länger glatt. Mit der Kundenkarte spare ich auch noch richtig
-            Geld. Top Service!"
-          </p>
-          <p class="testimonial-author">— Anna B.</p>
-        </div>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              „Ich habe mir die Augenbrauen zupfen lassen. Das Ergebnis ist
+              super geworden. Genau so, wie ich es mir gewünscht habe. Vielen
+              Dank für Ihre freundliche und professionelle Art.“
+            </p>
+            <p class="testimonial-author">— Aysegul Akkol</p>
+          </div>
+        </a>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              „Sehr schöne Erfahrung! Doina ist nicht nur kompetent, sondern
+              auch unglaublich freundlich und geduldig. Sie arbeitet sehr genau
+              und nimmt sich Zeit für ihre Kunden.🥰“
+            </p>
+            <p class="testimonial-author">— Mimi</p>
+          </div>
+        </a>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              „Ich habe so lange nach einer Meisterin gesucht, die mir die
+              perfekte, genau zu mir passende Augenbrauenform zaubert! Und
+              endlich habe ich sie gefunden! 😍 Vielen lieben Dank ... !“
+            </p>
+            <p class="testimonial-author">— Marina Hitrova</p>
+          </div>
+        </a>
       </div>
     </div>
+    <!-- Booking Banner -->
+    <section class="booking-banner">
+      <div class="booking-banner-content">
+        <span class="booking-badge">✦ Ihr Beauty-Termin wartet ✦</span>
 
-    <!-- Preise Section -->
-    <section id="preise">
-      <h2 class="section-title fade-in">Preise</h2>
-      <p class="section-subtitle fade-in">
-        Sehen Sie unsere vollständige Preisliste und lernen Sie unser Team
-        kennen
-      </p>
-      <div style="text-align: center; padding: 3rem 0">
-        <a href="preise.html" class="cta-button"
-          >Zur detaillierten Preisliste</a
-        >
+        <h2>Bereit für Ihren neuen Look?</h2>
+
+        <p>
+          Buchen Sie Ihren Termin in weniger als einer Minute online. Schnell,
+          unkompliziert und jederzeit verfügbar.
+        </p>
+
+        <div class="booking-buttons">
+          <a
+            href="https://buchung.treatwell.de/ort/519743/menue/"
+            target="_blank"
+            class="booking-btn-primary"
+          >
+            Jetzt Termin buchen
+          </a>
+
+          <a href="tel:+491637394921" class="booking-btn-secondary">
+            📞 Anrufen
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Kundenkarte Section -->
-    <section id="kundenkarte">
-      <h2 class="section-title">Kundenkarte</h2>
-      <div class="kundenkarte-box">
-        <div class="kundenkarte-content">
-          <h3>132€ Jahresgebühr</h3>
-          <h3>Ein Jahr reduzierte Preise</h3>
-          <p>
-            Zahlen Sie einmalig 132€ für Ihre Jahresmitgliedschaft und
-            profitieren Sie 12 Monate lang von bis zu 30% Rabatt auf alle
-            Waxing- und Sugaring-Behandlungen!
+    <section id="preise">
+      <h2 class="section-title fade-in">Warum ilu?</h2>
+      <p class="section-subtitle fade-in">
+        Qualität, Präzision und persönliche Betreuung – deshalb entscheiden sich
+        unsere Kundinnen immer wieder für ilu.
+      </p>
+
+      <div class="preise-teaser-grid">
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Hautschonende Produkte</span>
+
+          <p class="preise-teaser-desc">
+            Hochwertige Wachse und natürliche Zuckerpaste – auch für
+            empfindliche Haut geeignet.
           </p>
-          <div class="kundenkarte-price">Bis zu 30% sparen</div>
-          <ul class="benefits-list">
-            <li>Einmalig 132€ Jahresgebühr zahlen</li>
-            <li>12 Monate gültig ab Kaufdatum</li>
-            <li>Keine Mindestanzahl an Behandlungen</li>
-            <li>Kommen Sie so oft Sie wollen zum Vorzugspreis</li>
-            <li>Priorität bei der Terminvergabe</li>
-          </ul>
-          <a href="kundenkarte.html" class="cta-button" style="margin-top: 2rem"
-            >Mehr über Kundenkarte erfahren</a
-          >
         </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Professionelle Expertise</span>
+
+          <p class="preise-teaser-desc">
+            Über 5 Jahre Erfahrung und kontinuierliche Weiterbildung für beste
+            Ergebnisse.
+          </p>
+        </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Persönliche Betreuung</span>
+
+          <p class="preise-teaser-desc">
+            Jede Behandlung wird individuell auf Ihre Haut und Ihre Wünsche
+            abgestimmt.
+          </p>
+        </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Viele Stammkundinnen</span>
+
+          <p class="preise-teaser-desc">
+            Hunderte zufriedene Kundinnen und ausgezeichnete Bewertungen aus
+            Frankfurt.
+          </p>
+        </div>
+      </div>
+      <div class="preise-slogan fade-in">
+        <span class="slogan-line"> Transparente Preise. </span>
+
+        <span class="slogan-line"> Keine Überraschungen. </span>
+
+        <span class="slogan-sub">
+          Alle Behandlungen und Pakete finden Sie in unserer vollständigen
+          Preisliste.
+        </span>
+      </div>
+
+      <!-- CTA -->
+      <div class="preise-cta-wrap fade-in">
+        <a href="preise.html" class="cta-button"
+          >Zur vollständigen Preisliste</a
+        >
       </div>
     </section>
 
@@ -370,7 +502,7 @@
             <h4>WhatsApp</h4>
             <a
               href="https://wa.me/4901637394921"
-              class="whatsapp-button"
+              class="contact-whatsapp-button"
               target="_blank"
             >
               💬 WhatsApp Nachricht senden
@@ -454,7 +586,7 @@
           aria-label="Online Termin buchen"
         >
           <span class="contact-button-label">Online buchen</span>
-          <img src="./image/calendar.svg" width="28" height="28" alt="Termin" />
+          <img src="./image/calendar.svg" width="28" height="28" alt="Termin"  loading="lazy"/>
         </a>
       </div>
 
@@ -471,7 +603,7 @@
       </div>
       <div class="floating-contact-item">
         <a
-          href="tel:+4901637394921"
+          href="tel:+491637394921"
           class="contact-button phone-button"
           aria-label="Anrufen"
         >
@@ -513,12 +645,12 @@
       });
 
       // Change navigation background on scroll
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav");
+      const nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-          nav.style.boxShadow = "0 4px 30px rgba(38, 20, 12, 0.3)";
+          nav.style.boxShadow = "0 4px 30px rgba(38,20,12,.3)";
         } else {
-          nav.style.boxShadow = "0 2px 20px rgba(38, 20, 12, 0.15)";
+          nav.style.boxShadow = "0 2px 20px rgba(38,20,12,.15)";
         }
       });
 
@@ -583,13 +715,49 @@
       });
 
       // Add parallax effect to hero
-      window.addEventListener("scroll", () => {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector(".hero");
-        if (hero) {
-          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-      });
+      const hero = document.querySelector(".hero");
+      if (hero) {
+        let ticking = false;
+        window.addEventListener("scroll", () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              hero.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      }
+
+      // ===== Pakete Popup: apare dupa 3 secunde, o singura data per sesiune =====
+      (function () {
+        var STORAGE_KEY = "iluPkgPopupShown";
+        if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var overlay = document.getElementById("iluPkgOverlay");
+          var closeBtn = document.getElementById("iluPkgClose");
+          if (!overlay || !closeBtn) return;
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              overlay.classList.add("active");
+              sessionStorage.setItem(STORAGE_KEY, "1");
+            });
+          }, 3000);
+
+          closeBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            overlay.classList.remove("active");
+          });
+
+          overlay.addEventListener("click", function (e) {
+            if (e.target === overlay) {
+              overlay.classList.remove("active");
+            }
+          });
+        });
+      })();
     </script>
     <script src="cookie-banner.js"></script>
   </body>

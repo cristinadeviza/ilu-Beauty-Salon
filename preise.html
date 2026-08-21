@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-GCESVR7HGB"
@@ -17,6 +16,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.png" type="image/png" />
     <title>Behandlungen & Preise • ilu Aesthetic Studio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
@@ -24,8 +24,8 @@
     />
     <link rel="stylesheet" href="style-preise.css" />
   </head>
+
   <body>
-    <!-- Navigation -->
     <nav>
       <div class="nav-content">
         <a href="index.html" class="logo">ilu</a>
@@ -34,7 +34,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="preise.html">Behandlungen & Preise</a></li>
-            <li><a href="kundenkarte.html">Kundenkarte</a></li>
+            <li><a href="kundenkarte.html">Pakete</a></li>
             <li><a href="index.html#kontakt">Kontakt</a></li>
           </ul>
           <div class="language-selector">
@@ -45,8 +45,6 @@
       </div>
     </nav>
 
-    <!-- Rest of HTML content remains the same -->
-    <!-- Page Header -->
     <div class="page-header">
       <h1>Behandlungen & Preise</h1>
       <p>
@@ -55,7 +53,6 @@
       </p>
     </div>
 
-    <!-- Specialist Section -->
     <div class="specialist-section fade-in">
       <div class="specialist-container">
         <div class="specialist-image">
@@ -63,7 +60,7 @@
             src="./image/Beauty-Specialist.jpg"
             alt="Beauty Specialist"
             onerror="this.src = './/image/Beauty-Specialist.jpg'"
-          />
+           loading="lazy"/>
         </div>
         <div class="specialist-content">
           <h2>Ihre Spezialistin</h2>
@@ -98,13 +95,34 @@
       </div>
     </div>
 
-    <!-- Treatments & Prices -->
     <section>
       <h2 class="section-title fade-in">Unsere Behandlungen</h2>
 
+      <!-- Damen / Herren filter -->
+      <div class="filter-section fade-in">
+        <div class="filter-row">
+          <button
+            class="filter-btn active"
+            data-value="damen"
+            onclick="setGender('damen')"
+          >
+            Damen
+          </button>
+          <button
+            class="filter-btn"
+            data-value="herren"
+            onclick="setGender('herren')"
+          >
+            Herren
+          </button>
+        </div>
+      </div>
+
       <div class="treatment-details">
-        <!-- Wimpern & Augenbrauen -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             WIMPERN & AUGENBRAUEN (Damen only, no toggle)
+             ═══════════════════════════════════════════ -->
+        <div class="treatment-category fade-in" id="cat-wimper">
           <div class="treatment-header">
             <div class="treatment-info">
               <h3>Wimpern & Augenbrauen</h3>
@@ -114,393 +132,597 @@
                 Lifting- und Laminierungstechniken sowie präziser Modellierung
                 kreieren wir den perfekten Look für Sie.
               </p>
-              <p style="margin-top: 1rem">
-                Unsere hochwertigen Produkte sind schonend zur Haut und sorgen
-                für langanhaltende, natürlich schöne Ergebnisse. Jede Behandlung
-                wird individuell auf Ihre Wünsche abgestimmt.
-              </p>
             </div>
             <div class="treatment-image">
               <img
                 src="/image/Augenbraunfaerbung.jpeg"
                 alt="Augenbrauen"
                 onerror="this.src = './/image/Augenbraunfaerbung.jpeg'"
-              />
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name"
-                >Wimpernlifting / Wimpernlaminierung</span
-              >
-              <span class="price-value">55 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Wimpernlifting + Färben</span>
-              <span class="price-value">65 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Wimpern färben</span>
-              <span class="price-value">15 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Augenbrauenmodellierung (Zupfen/Waxing/Fadentechnik)</span
-              >
-              <span class="price-value">22 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Augenbrauenmodellierung + Färben</span>
-              <span class="price-value">35 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Augenbrauenlaminierung (ohne Modellierung)</span
-              >
-              <span class="price-value">45 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Augenbrauenmodellierung + Laminierung</span
-              >
-              <span class="price-value">60 €</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Komplettpaket (Modellierung + Laminierung + Färben)</span
-              >
-              <span class="price-value">70 €</span>
-            </div>
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Behandlung</th>
+                  <th class="col-price wax-active">Preis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Wimpern</td>
+                </tr>
+                <tr>
+                  <td>Wimpernlifting / Wimpernlaminierung</td>
+                  <td class="col-price">55 €</td>
+                </tr>
+                <tr>
+                  <td>Wimpernlaminierung + Färben</td>
+                  <td class="col-price">65 €</td>
+                </tr>
+                <tr>
+                  <td>Wimpern färben</td>
+                  <td class="col-price">15 €</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Augenbrauen</td>
+                </tr>
+                <tr>
+                  <td>
+                    Augenbrauenmodellierung (Zupfen / Waxing / Fadentechnik)
+                  </td>
+                  <td class="col-price">22 €</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauenfärben</td>
+                  <td class="col-price">15 €</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauenmodellierung + Färben</td>
+                  <td class="col-price">35 €</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Komplettpakete</td>
+                </tr>
+                <tr>
+                  <td>Komplettpaket (Modellierung + Laminierung + Färben)</td>
+                  <td class="col-price">65 €</td>
+                </tr>
+
+                <!-- ── NEU: Fadentechnik ────────────────── -->
+                <tr class="zone-row">
+                  <td colspan="2">Fadentechnik (Gesicht)</td>
+                </tr>
+                <tr>
+                  <td>Kinn</td>
+                  <td class="col-price">10 €</td>
+                </tr>
+                <tr>
+                  <td>Stirn</td>
+                  <td class="col-price">19 €</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauen</td>
+                  <td class="col-price">15 €</td>
+                </tr>
+                <tr>
+                  <td>Oberlippe</td>
+                  <td class="col-price">10 €</td>
+                </tr>
+                <tr>
+                  <td>Wangen</td>
+                  <td class="col-price">12 €</td>
+                </tr>
+                <tr>
+                  <td>Gesicht komplett</td>
+                  <td class="col-price">40 €</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Waxing -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             HAARENTFERNUNG DAMEN – with Wax/Sugar toggle
+             ═══════════════════════════════════════════ -->
+        <div class="treatment-category fade-in" id="cat-damen">
           <div class="treatment-header">
             <div class="treatment-info">
-              <h3>Waxing</h3>
+              <h3>Haarentfernung Damen</h3>
               <p>
-                Professionelle Haarentfernung mit hochwertigem Warmwachs für
-                langanhaltend glatte Haut. Unsere Waxing-Behandlungen sind
-                schnell, effektiv und sorgen für Ergebnisse, die bis zu 4 Wochen
-                anhalten.
-              </p>
-              <p style="margin-top: 1rem">
-                Wir verwenden nur qualitativ hochwertiges Wachs, das schonend
-                zur Haut ist und minimale Irritationen verursacht. Ideal für
-                alle Körperbereiche - von Gesicht bis Beine.
+                Wählen Sie Ihre bevorzugte Methode – beide sorgen für
+                langanhaltend glatte Ergebnisse.
               </p>
             </div>
             <div class="treatment-image">
               <img
                 src="./image/Prozedure.jpg"
-                alt="Waxing"
+                alt="Haarentfernung"
                 onerror="this.src = './image/Prozedure.png'"
-              />
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list-header">
-            <span>Behandlung</span>
-            <div class="price-list-header-prices">
-              <span>Normal</span>
-              <span>Mit Karte</span>
+
+          <div class="price-table-wrap">
+            <!-- Toggle buttons -->
+            <div class="method-toggle">
+              <button
+                class="mtoggle-btn wax active"
+                onclick="setMethod('wax', 'damen')"
+              >
+                Waxing
+              </button>
+              <button
+                class="mtoggle-btn sugar"
+                onclick="setMethod('sugar', 'damen')"
+              >
+                Sugaring
+              </button>
             </div>
-          </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name">Oberschenkel</span>
-              <div class="price-dual">
-                <span class="price-regular">28 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
+
+            <!-- Description card — switches via JS -->
+            <div class="method-desc" id="desc-damen">
+              <h4 id="desc-damen-title">Waxing</h4>
+              <p id="desc-damen-text">
+                Professionelle Haarentfernung mit hochwertigem Warmwachs.
+                Schnell und effektiv für alle Körperbereiche – von Beinen über
+                Bikinizone bis zu Gesicht und Rücken. Die Haut bleibt bis zu
+                <strong>4 Wochen</strong> glatt. Ideal für alle, die ein
+                schnelles und bewährtes Ergebnis möchten.
+              </p>
             </div>
-            <div class="price-item">
-              <span class="price-name">Unterschenkel</span>
-              <div class="price-dual">
-                <span class="price-regular">28 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Beine komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">39 €</span>
-                <span class="price-with-card">31 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini klassisch</span>
-              <div class="price-dual">
-                <span class="price-regular">22 €</span>
-                <span class="price-with-card">16 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini brasilianisch</span>
-              <div class="price-dual">
-                <span class="price-regular">29 €</span>
-                <span class="price-with-card">22 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">44 €</span>
-                <span class="price-with-card">36 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Po</span>
-              <div class="price-dual">
-                <span class="price-regular">22 €</span>
-                <span class="price-with-card">14 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Rücken unten</span>
-              <div class="price-dual">
-                <span class="price-regular">25 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Schultern</span>
-              <div class="price-dual">
-                <span class="price-regular">30 €</span>
-                <span class="price-with-card">25 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Rücken komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">48 €</span>
-                <span class="price-with-card">37 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bauch</span>
-              <div class="price-dual">
-                <span class="price-regular">22 €</span>
-                <span class="price-with-card">16 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brust</span>
-              <div class="price-dual">
-                <span class="price-regular">29 €</span>
-                <span class="price-with-card">22 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Achseln</span>
-              <div class="price-dual">
-                <span class="price-regular">19 €</span>
-                <span class="price-with-card">13 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Unterarme</span>
-              <div class="price-dual">
-                <span class="price-regular">21 €</span>
-                <span class="price-with-card">18 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Arme komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">30 €</span>
-                <span class="price-with-card">24 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Hände</span>
-              <div class="price-dual">
-                <span class="price-regular">16 €</span>
-                <span class="price-with-card">14 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Füße</span>
-              <div class="price-dual">
-                <span class="price-regular">16 €</span>
-                <span class="price-with-card">14 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Nase / Ohren</span>
-              <div class="price-dual">
-                <span class="price-regular">16 €</span>
-                <span class="price-with-card">14 €</span>
-              </div>
-            </div>
+
+            <!-- 2-column table -->
+            <table class="price-table" id="table-damen">
+              <thead>
+                <tr>
+                  <th>Behandlung</th>
+                  <th class="col-price wax-active" id="th-damen">Waxing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Gesicht</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauen</td>
+                  <td class="col-price" data-wax="15 €" data-sugar="16 €">
+                    15 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oberlippe / Kinn</td>
+                  <td class="col-price" data-wax="10 €" data-sugar="15 €">
+                    10 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nase</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="—">12 €</td>
+                </tr>
+                <tr>
+                  <td>Wangen</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="18 €">
+                    12 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ohren</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="12 €">
+                    12 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hals</td>
+                  <td class="col-price" data-wax="18 €" data-sugar="18 €">
+                    18 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gesicht komplett</td>
+                  <td class="col-price" data-wax="35 €" data-sugar="45 €">
+                    35 €
+                  </td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Achseln & Oberkörper</td>
+                </tr>
+                <tr>
+                  <td>Achseln</td>
+                  <td class="col-price" data-wax="18 €" data-sugar="25 €">
+                    18 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bauchlinie</td>
+                  <td class="col-price" data-wax="8 €" data-sugar="10 €">
+                    8 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bauch</td>
+                  <td class="col-price" data-wax="18 €" data-sugar="24 €">
+                    18 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Brust</td>
+                  <td class="col-price" data-wax="28 €" data-sugar="35 €">
+                    28 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Brust + Bauch</td>
+                  <td class="col-price" data-wax="38 €" data-sugar="—">38 €</td>
+                </tr>
+                <tr>
+                  <td>Schultern</td>
+                  <td class="col-price" data-wax="28 €" data-sugar="38 €">
+                    28 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nacken</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="—">12 €</td>
+                </tr>
+                <tr>
+                  <td>Rücken unten</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="28 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rücken komplett</td>
+                  <td class="col-price" data-wax="45 €" data-sugar="42 €">
+                    45 €
+                  </td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Arme & Hände</td>
+                </tr>
+                <tr>
+                  <td>Unterarme</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="30 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oberarme</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="30 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Arme komplett</td>
+                  <td class="col-price" data-wax="30 €" data-sugar="42 €">
+                    30 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hände</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="15 €">
+                    12 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Finger</td>
+                  <td class="col-price" data-wax="5 €" data-sugar="5 €">5 €</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Bikini & Intim</td>
+                </tr>
+                <tr>
+                  <td>Bikini Classic</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="25 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bikini Brasilien</td>
+                  <td class="col-price" data-wax="30 €" data-sugar="35 €">
+                    30 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bikini Komplett (Hollywood)</td>
+                  <td class="col-price" data-wax="42 €" data-sugar="50 €">
+                    42 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pofalte</td>
+                  <td class="col-price" data-wax="15 €" data-sugar="18 €">
+                    15 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Po</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="25 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Po + Pofalte</td>
+                  <td class="col-price" data-wax="30 €" data-sugar="38 €">
+                    30 €
+                  </td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Beine & Füße</td>
+                </tr>
+                <tr>
+                  <td>Oberschenkel</td>
+                  <td class="col-price" data-wax="25 €" data-sugar="38 €">
+                    25 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Unterschenkel</td>
+                  <td class="col-price" data-wax="25 €" data-sugar="38 €">
+                    25 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Beine komplett</td>
+                  <td class="col-price" data-wax="40 €" data-sugar="58 €">
+                    40 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Füße</td>
+                  <td class="col-price" data-wax="8 €" data-sugar="10 €">
+                    8 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Zehen</td>
+                  <td class="col-price" data-wax="5 €" data-sugar="5 €">5 €</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Sugaring -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             HAARENTFERNUNG HERREN – with Wax/Sugar toggle
+             ═══════════════════════════════════════════ -->
+        <div
+          class="treatment-category fade-in"
+          id="cat-herren"
+          style="display: none"
+        >
           <div class="treatment-header">
             <div class="treatment-info">
-              <h3>Sugaring</h3>
+              <h3>Haarentfernung Herren</h3>
               <p>
-                Sanfte Haarentfernung mit natürlicher Zuckerpaste - die
-                schonende Alternative zum Waxing. Sugaring ist besonders
-                hautfreundlich und eignet sich perfekt für empfindliche Haut.
-              </p>
-              <p style="margin-top: 1rem">
-                Die natürliche Zuckerpaste haftet nur an den Haaren, nicht an
-                der Haut, was zu weniger Irritationen und einem angenehmeren
-                Erlebnis führt. Die Ergebnisse halten bis zu 6 Wochen an und die
-                Haare wachsen feiner nach.
+                Wählen Sie Ihre bevorzugte Methode – beide sorgen für
+                langanhaltend glatte Ergebnisse.
               </p>
             </div>
             <div class="treatment-image">
               <img
-                src=".//image/pasta.png"
-                alt="Sugaring"
-                onerror="this.src = './/image/pasta.png'"
-              />
+                src="./image/Prozedure.jpg"
+                alt="Haarentfernung Herren"
+                onerror="this.src = './image/Prozedure.png'"
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list-header">
-            <span>Behandlung</span>
-            <div class="price-list-header-prices">
-              <span>Normal</span>
-              <span>Mit Karte</span>
+
+          <div class="price-table-wrap">
+            <!-- Toggle buttons -->
+            <div class="method-toggle">
+              <button
+                class="mtoggle-btn wax active"
+                onclick="setMethod('wax', 'herren')"
+              >
+                Waxing
+              </button>
+              <button
+                class="mtoggle-btn sugar"
+                onclick="setMethod('sugar', 'herren')"
+              >
+                Sugaring
+              </button>
             </div>
-          </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name">Oberschenkel</span>
-              <div class="price-dual">
-                <span class="price-regular">39 €</span>
-                <span class="price-with-card">31 €</span>
-              </div>
+
+            <!-- Description card -->
+            <div class="method-desc" id="desc-herren">
+              <h4 id="desc-herren-title">Waxing</h4>
+              <p id="desc-herren-text">
+                Professionelle Haarentfernung mit hochwertigem Warmwachs,
+                speziell abgestimmt auf die stärkere Männerhaut. Schnell und
+                präzise für Brust, Rücken, Schultern und mehr. Die Haut bleibt
+                bis zu <strong>4 Wochen</strong> glatt.
+              </p>
             </div>
-            <div class="price-item">
-              <span class="price-name">Unterschenkel</span>
-              <div class="price-dual">
-                <span class="price-regular">39 €</span>
-                <span class="price-with-card">31 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Beine komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">65 €</span>
-                <span class="price-with-card">53 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini klassisch</span>
-              <div class="price-dual">
-                <span class="price-regular">28 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini brasilianisch</span>
-              <div class="price-dual">
-                <span class="price-regular">37 €</span>
-                <span class="price-with-card">28 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">54 €</span>
-                <span class="price-with-card">43 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Po</span>
-              <div class="price-dual">
-                <span class="price-regular">26 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Rücken unten</span>
-              <div class="price-dual">
-                <span class="price-regular">31 €</span>
-                <span class="price-with-card">25 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Schultern</span>
-              <div class="price-dual">
-                <span class="price-regular">42 €</span>
-                <span class="price-with-card">35 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Rücken komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">64 €</span>
-                <span class="price-with-card">53 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bauch</span>
-              <div class="price-dual">
-                <span class="price-regular">26 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brust</span>
-              <div class="price-dual">
-                <span class="price-regular">38 €</span>
-                <span class="price-with-card">28 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Achseln</span>
-              <div class="price-dual">
-                <span class="price-regular">27 €</span>
-                <span class="price-with-card">21 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Unterarme</span>
-              <div class="price-dual">
-                <span class="price-regular">32 €</span>
-                <span class="price-with-card">26 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Arme komplett</span>
-              <div class="price-dual">
-                <span class="price-regular">43 €</span>
-                <span class="price-with-card">32 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Oberlippe</span>
-              <div class="price-dual">
-                <span class="price-regular">17 €</span>
-                <span class="price-with-card">13 €</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Hände / Füße</span>
-              <div class="price-dual">
-                <span class="price-regular">19 €</span>
-                <span class="price-with-card">14 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="price-note">
-            💡 <strong>Kundenkarte:</strong> Zahlen Sie einmalig 132€ pro Jahr
-            und profitieren Sie von den reduzierten Preisen in der Spalte "Mit
-            Karte". Sparen Sie bis zu 30% bei jeder Behandlung – je öfter Sie
-            kommen, desto mehr lohnt es sich!
-            <a href="kundenkarte.html">Mehr erfahren →</a>
+
+            <!-- 2-column table -->
+            <table class="price-table" id="table-herren">
+              <thead>
+                <tr>
+                  <th>Behandlung</th>
+                  <th class="col-price wax-active" id="th-herren">Waxing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Gesicht</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauen zupfen</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="—">12 €</td>
+                </tr>
+                <tr>
+                  <td>Augenbrauen modellieren</td>
+                  <td class="col-price" data-wax="18 €" data-sugar="—">18 €</td>
+                </tr>
+                <tr>
+                  <td>Nase</td>
+                  <td class="col-price" data-wax="10 €" data-sugar="—">10 €</td>
+                </tr>
+                <tr>
+                  <td>Ohren</td>
+                  <td class="col-price" data-wax="10 €" data-sugar="—">10 €</td>
+                </tr>
+                <tr>
+                  <td>Wangen</td>
+                  <td class="col-price" data-wax="15 €" data-sugar="18 €">
+                    15 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hals</td>
+                  <td class="col-price" data-wax="18 €" data-sugar="20 €">
+                    18 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gesicht komplett</td>
+                  <td class="col-price" data-wax="38 €" data-sugar="—">38 €</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Achseln & Oberkörper</td>
+                </tr>
+                <tr>
+                  <td>Achseln</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="28 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bauch</td>
+                  <td class="col-price" data-wax="20 €" data-sugar="28 €">
+                    20 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Brust</td>
+                  <td class="col-price" data-wax="30 €" data-sugar="38 €">
+                    30 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Brust + Bauch</td>
+                  <td class="col-price" data-wax="45 €" data-sugar="60 €">
+                    45 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Schultern</td>
+                  <td class="col-price" data-wax="30 €" data-sugar="40 €">
+                    30 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nacken</td>
+                  <td class="col-price" data-wax="15 €" data-sugar="20 €">
+                    15 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rücken unten</td>
+                  <td class="col-price" data-wax="24 €" data-sugar="30 €">
+                    24 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rücken komplett</td>
+                  <td class="col-price" data-wax="50 €" data-sugar="65 €">
+                    50 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rücken + Schultern</td>
+                  <td class="col-price" data-wax="58 €" data-sugar="75 €">
+                    58 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rücken + Schultern + Nacken</td>
+                  <td class="col-price" data-wax="65 €" data-sugar="85 €">
+                    65 €
+                  </td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Arme & Hände</td>
+                </tr>
+                <tr>
+                  <td>Unterarme</td>
+                  <td class="col-price" data-wax="22 €" data-sugar="32 €">
+                    22 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oberarme</td>
+                  <td class="col-price" data-wax="22 €" data-sugar="32 €">
+                    22 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Arme komplett</td>
+                  <td class="col-price" data-wax="32 €" data-sugar="45 €">
+                    32 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hände</td>
+                  <td class="col-price" data-wax="12 €" data-sugar="15 €">
+                    12 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Finger</td>
+                  <td class="col-price" data-wax="5 €" data-sugar="5 €">5 €</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Beine & Füße</td>
+                </tr>
+                <tr>
+                  <td>Unterschenkel</td>
+                  <td class="col-price" data-wax="28 €" data-sugar="40 €">
+                    28 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Oberschenkel</td>
+                  <td class="col-price" data-wax="28 €" data-sugar="40 €">
+                    28 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Beine komplett</td>
+                  <td class="col-price" data-wax="45 €" data-sugar="60 €">
+                    45 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Füße</td>
+                  <td class="col-price" data-wax="8 €" data-sugar="10 €">
+                    8 €
+                  </td>
+                </tr>
+                <tr>
+                  <td>Zehen</td>
+                  <td class="col-price" data-wax="5 €" data-sugar="5 €">5 €</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+      <!-- /treatment-details -->
     </section>
 
-    <!-- CTA Section -->
     <div class="cta-section">
       <h2>Bereit für Ihre Transformation?</h2>
       <p>
@@ -513,7 +735,6 @@
       <a href="tel:+4901637394921" class="cta-button secondary">📞 Anrufen</a>
     </div>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-content">
         <div class="footer-section">
@@ -553,17 +774,20 @@
       </div>
       <div class="footer-bottom">
         <p>
-          © 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten
-          <br />
-          <a href="impressum.html" style="color: var(--cream); margin-right: 1.5rem;">Impressum</a>
-          <a href="datenschutz.html" style="color: var(--cream);">Datenschutzerklärung</a>
+          © 2026 ilu • Aesthetic Studio Frankfurt • Alle Rechte vorbehalten<br />
+          <a
+            href="impressum.html"
+            style="color: var(--cream); margin-right: 1.5rem"
+            >Impressum</a
+          >
+          <a href="datenschutz.html" style="color: var(--cream)"
+            >Datenschutzerklärung</a
+          >
         </p>
       </div>
     </footer>
 
-    <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-          <div class="floating-contact">
       <div class="floating-contact-item">
         <a
           href="https://buchung.treatwell.de/ort/519743/menue/"
@@ -572,7 +796,7 @@
           aria-label="Online Termin buchen"
         >
           <span class="contact-button-label">Online buchen</span>
-          <img src="./image/calendar.svg" width="28" height="28" alt="Termin" />
+          <img src="./image/calendar.svg" width="28" height="28" alt="Termin"  loading="lazy"/>
         </a>
       </div>
       <div class="floating-contact-item">
@@ -582,8 +806,7 @@
           class="contact-button whatsapp-button"
           aria-label="WhatsApp Kontakt"
         >
-          <span class="contact-button-label">WhatsApp</span>
-          💬
+          <span class="contact-button-label">WhatsApp</span>💬
         </a>
       </div>
       <div class="floating-contact-item">
@@ -592,66 +815,106 @@
           class="contact-button phone-button"
           aria-label="Anrufen"
         >
-          <span class="contact-button-label">Anrufen</span>
-          📞
+          <span class="contact-button-label">Anrufen</span>📞
         </a>
       </div>
     </div>
 
     <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.toggle("active");
-      }
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetElement = document.querySelector(targetId);
-
-          if (targetElement) {
-            const offset = 100;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition =
-              elementPosition + window.pageYOffset - offset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // Intersection Observer for scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
+      /* ── descriptions ─────────────────────────────────── */
+      const DESCRIPTIONS = {
+        damen: {
+          wax: {
+            title: "Waxing",
+            text: "Professionelle Haarentfernung mit hochwertigem Warmwachs. Schnell und effektiv für alle Körperbereiche – von Beinen über Bikinizone bis zu Gesicht und Rücken. Die Haut bleibt bis zu <strong>4 Wochen</strong> glatt. Ideal für alle, die ein schnelles und bewährtes Ergebnis möchten.",
+          },
+          sugar: {
+            title: "Sugaring",
+            text: "Sanfte Haarentfernung mit natürlicher Zuckerpaste – ohne Kunstharze und hautfreundlicher als Waxing. Die Paste haftet nur an den Haaren, nicht an der Haut: weniger Rötungen, weniger Irritationen. Ergebnisse halten bis zu <strong>6 Wochen</strong> an, die Haare wachsen feiner nach. Besonders geeignet für empfindliche Haut.",
+          },
+        },
+        herren: {
+          wax: {
+            title: "Waxing",
+            text: "Professionelle Haarentfernung mit hochwertigem Warmwachs, speziell abgestimmt auf die stärkere Männerhaut. Schnell und präzise für Brust, Rücken, Schultern und mehr. Die Haut bleibt bis zu <strong>4 Wochen</strong> glatt.",
+          },
+          sugar: {
+            title: "Sugaring",
+            text: "Natürliche Zuckerpaste, die auch auf dicker Männerhaut sanft und effektiv wirkt. Haftet ausschließlich an den Haaren – weniger Rötungen, weniger Irritationen. Ergebnisse halten bis zu <strong>6 Wochen</strong> an, Haare wachsen feiner nach.",
+          },
+        },
       };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+      const activeMethod = { damen: "wax", herren: "wax" };
+
+      function setMethod(method, gender) {
+        activeMethod[gender] = method;
+        const cat = document.getElementById("cat-" + gender);
+        cat.querySelectorAll(".mtoggle-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.classList.contains(method));
         });
-      }, observerOptions);
+        const desc = DESCRIPTIONS[gender][method];
+        document.getElementById("desc-" + gender + "-title").innerHTML =
+          desc.title;
+        document.getElementById("desc-" + gender + "-text").innerHTML =
+          desc.text;
+        const descEl = document.getElementById("desc-" + gender);
+        descEl.className = "method-desc" + (method === "sugar" ? " sugar" : "");
+        const th = document.getElementById("th-" + gender);
+        th.textContent = method === "wax" ? "Waxing" : "Sugaring";
+        th.className =
+          "col-price " + (method === "wax" ? "wax-active" : "sugar-active");
+        const table = document.getElementById("table-" + gender);
+        table.querySelectorAll("td.col-price").forEach((td) => {
+          const val = td.dataset[method];
+          td.textContent = val || "—";
+          td.classList.toggle("empty", !val || val === "—");
+        });
+      }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const animatedElements = document.querySelectorAll(".fade-in");
-        animatedElements.forEach((el) => observer.observe(el));
+      function setGender(gender) {
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((btn) =>
+            btn.classList.toggle("active", btn.dataset.value === gender),
+          );
+        document.getElementById("cat-wimper").style.display =
+          gender === "damen" ? "" : "none";
+        document.getElementById("cat-damen").style.display =
+          gender === "damen" ? "" : "none";
+        document.getElementById("cat-herren").style.display =
+          gender === "herren" ? "" : "none";
+      }
+
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const el = document.querySelector(a.getAttribute("href"));
+          if (el)
+            window.scrollTo({
+              top: el.getBoundingClientRect().top + pageYOffset - 100,
+              behavior: "smooth",
+            });
+        });
       });
-
-      // Navigation scroll effect
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-          nav.style.boxShadow = "0 4px 30px rgba(38, 20, 12, 0.3)";
-        } else {
-          nav.style.boxShadow = "0 2px 20px rgba(38, 20, 12, 0.15)";
-        }
+      window.addEventListener("scroll", () => {
+        document.querySelector("nav").style.boxShadow =
+          scrollY > 50
+            ? "0 4px 30px rgba(38,20,12,0.3)"
+            : "0 2px 20px rgba(38,20,12,0.15)";
+      });
+      const obs = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          }),
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+      );
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".fade-in").forEach((el) => obs.observe(el));
       });
     </script>
     <script src="cookie-banner.js"></script>

@@ -279,6 +279,223 @@ nav {
   color: var(--mocha);
 }
 
+/* ── Gender filter ─────────────────────────── */
+.filter-section {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.filter-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.65rem 2.5rem;
+  border: 1px solid rgba(38, 20, 12, 0.35);
+  background: transparent;
+  color: rgba(38, 20, 12, 0.85);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.filter-btn:hover {
+  border-color: rgba(38, 20, 12, 0.7);
+  background: rgba(38, 20, 12, 0.06);
+}
+.filter-btn.active {
+  background: #26140c;
+  color: #fff3df;
+  border-color: #26140c;
+}
+
+/* ── Method toggle (Waxing / Sugaring) ──────── */
+.method-toggle {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid #d5c1b8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mtoggle-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.72rem 2.2rem;
+  border: none;
+  background: transparent;
+  color: #644d42;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.mtoggle-btn + .mtoggle-btn {
+  border-left: 1.5px solid #d5c1b8;
+}
+.mtoggle-btn.active.wax {
+  background: #c9a96e;
+  color: #fff;
+}
+.mtoggle-btn.active.sugar {
+  background: #7fa88a;
+  color: #fff;
+}
+.mtoggle-btn:not(.active):hover {
+  background: #f5ece2;
+}
+
+/* ── Single description card (switches content) */
+.method-desc {
+  padding: 1.1rem 1.5rem;
+  border-left: 4px solid #c9a96e;
+  background: #fdf8f2;
+  margin-bottom: 1.75rem;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+.method-desc.sugar {
+  border-left-color: #7fa88a;
+  background: #f5fbf7;
+}
+.method-desc h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #26140c;
+  margin-bottom: 0.45rem;
+}
+.method-desc p {
+  font-size: 0.83rem;
+  color: #644d42;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Price table – 2 columns ─────────────────── */
+.price-table-wrap {
+  max-width: 100%;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+}
+.price-table thead tr {
+  background: #26140c;
+  color: #fff3df;
+}
+.price-table thead th {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.price-table thead th.col-price {
+  text-align: right;
+  white-space: nowrap;
+  width: 110px;
+}
+.price-table tbody tr {
+  border-bottom: 1px solid #e8ddd5;
+  transition: background 0.15s;
+}
+.price-table tbody tr:nth-child(even) {
+  background: #fffaf4;
+}
+.price-table tbody tr:hover {
+  background: #f5ece2;
+}
+.price-table tbody td {
+  padding: 0.65rem 1.2rem;
+  color: #26140c;
+  vertical-align: middle;
+}
+.price-table tbody td.col-price {
+  text-align: right;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #644d42;
+  white-space: nowrap;
+  width: 110px;
+}
+/* row not available for selected method */
+.price-table tr.row-hidden {
+  display: none;
+}
+.price-table tbody td.empty {
+  color: #c0b0a8;
+  font-weight: 400;
+  font-size: 0.82rem;
+  font-family: "Montserrat", sans-serif;
+}
+/* zone group header */
+.price-table tr.zone-row td {
+  background: #f0e6dd;
+  color: #644d42;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.55rem 1.2rem;
+  border-bottom: none;
+  text-transform: uppercase;
+}
+.price-table tr.zone-row:hover {
+  background: #f0e6dd;
+}
+
+/* active method colour on header price cell */
+.price-table thead th.col-price.wax-active {
+  color: #f5dfa8;
+}
+.price-table thead th.col-price.sugar-active {
+  color: #a8d4b8;
+}
+
+@media (max-width: 600px) {
+  .method-toggle {
+    width: 100%;
+  }
+  .mtoggle-btn {
+    flex: 1;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.78rem;
+  }
+  .price-table-wrap {
+    padding: 0 0.5rem;
+  }
+  .price-table {
+    font-size: 0.78rem;
+  }
+  .price-table thead th,
+  .price-table tbody td {
+    padding: 0.45rem 0.5rem;
+  }
+  .price-table thead th.col-price,
+  .price-table tbody td.col-price {
+    width: 72px;
+    font-size: 0.95rem;
+  }
+  .price-table tr.zone-row td {
+    font-size: 0.8rem;
+  }
+}
+
 /* Section */
 section {
   max-width: 1400px;

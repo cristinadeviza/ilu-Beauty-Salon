@@ -17,12 +17,45 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.png" type="image/png" />
+
+    <meta
+      name="description"
+      content="ilu Aesthetic Studio Frankfurt – Professional lash, brow, sugaring and waxing treatments. Luxurious beauty studio in the heart of Frankfurt."
+    />
+    <meta
+      name="keywords"
+      content="Lash Lifting Frankfurt, Eyebrows Frankfurt, Brow Lifting Frankfurt, Sugaring Frankfurt, Waxing Frankfurt, Beauty Studio Frankfurt"
+    />
+    <meta name="author" content="ilu Aesthetic Studio Frankfurt" />
+
+    <link rel="canonical" href="https://www.ilu-concept.com/index-en.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ilu • Aesthetic Studio Frankfurt" />
+    <meta
+      property="og:description"
+      content="Professional lash and brow treatments, waxing & sugaring in a luxurious atmosphere."
+    />
+    <meta
+      property="og:image"
+      content="https://www.ilu-concept.com/image/cover.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://www.ilu-concept.com/index-en.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Instagram & WhatsApp Preview -->
+    <meta name="theme-color" content="#d5c1b8" />
+
     <title>ilu • Aesthetic Studio Frankfurt</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style-index-en.css" />
+    <link rel="stylesheet" href="style-index.css" />
     <!-- Treatwell Booking Widget -->
     <link
       rel="stylesheet"
@@ -31,7 +64,64 @@
     />
     <script src="https://buchung.treatwell.de/common/venue-menu/javascript/widget-button.js?v1"></script>
   </head>
+
   <body>
+    <!-- Packages Popup -->
+    <div class="ilu-pkg-overlay" id="iluPkgOverlay">
+      <div class="ilu-pkg-card">
+        <button class="ilu-pkg-close" id="iluPkgClose" aria-label="Close">
+          ×
+        </button>
+
+        <a class="ilu-pkg-link" href="kundenkarte-en.html">
+          <div class="ilu-pkg-header">
+            <span class="ilu-pkg-badge">✦ Complete Packages ✦</span>
+            <h2>Our Packages</h2>
+            <p>Full Body & Upper Body for Ladies</p>
+          </div>
+
+          <div class="ilu-pkg-table">
+            <div class="ilu-pkg-row ilu-pkg-row-head">
+              <span class="ilu-pkg-name"></span>
+              <span>Wax</span>
+              <span>Sugar</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                "Full Body" Ladies
+                <small
+                  >Arms, Legs, Brazilian Hollywood Cut, Underarms, Face</small
+                >
+              </span>
+              <span class="ilu-pkg-price">154 €</span>
+              <span class="ilu-pkg-price">179 €</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                "Full Body Light" Ladies
+                <small>Legs, Underarms, Brazilian Hollywood Cut</small>
+              </span>
+              <span class="ilu-pkg-price">89 €</span>
+              <span class="ilu-pkg-price">109 €</span>
+            </div>
+
+            <div class="ilu-pkg-row">
+              <span class="ilu-pkg-name">
+                "Upper Body" Ladies
+                <small>Chest, Stomach, Back, Shoulders, Underarms</small>
+              </span>
+              <span class="ilu-pkg-price">74 €</span>
+              <span class="ilu-pkg-price">99 €</span>
+            </div>
+          </div>
+
+          <div class="ilu-pkg-cta">View All Packages →</div>
+        </a>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
       <div class="nav-content">
@@ -41,7 +131,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="index-en.html">Home</a></li>
             <li><a href="preise-en.html">Treatments & Prices</a></li>
-            <li><a href="kundenkarte-en.html">Membership Card</a></li>
+            <li><a href="kundenkarte-en.html">Packages</a></li>
             <li><a href="index-en.html#kontakt">Contact</a></li>
           </ul>
           <div class="language-selector">
@@ -62,14 +152,11 @@
           lash and brow treatments as well as gentle hair removal in a luxurious
           atmosphere.
         </p>
-        <!-- <a href="#kontakt" class="cta-button">Book Appointment</a> -->
-                <div
+        <div
           id="wahanda-online-booking-widget-iframe"
           data-widget-url="https://buchung.treatwell.de/ort/519743/menue/"
           style="display: none"
         ></div>
-
-        <!-- Dein eigener Button öffnet das Widget -->
         <a
           href="https://buchung.treatwell.de/ort/519743/menue/"
           target="_blank"
@@ -78,22 +165,21 @@
           Book Appointment
         </a>
       </div>
-      </div>
     </section>
 
     <!-- Gallery Preview -->
     <div class="gallery-preview">
       <div class="gallery-item">
-        <img src=".//image/Augenbrauenbehandlung.jpg" alt="Eyebrow Treatment" />
+        <img src=".//image/Augenbrauenbehandlung.jpg" alt="Eyebrow Treatment"  loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src="./image/Waxing.jpg" alt="Waxing" />
+        <img src="./image/Waxing.jpg" alt="Waxing"  loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src=".//image/wimpernbehandlung.jpg" alt="Lash Treatment" />
+        <img src=".//image/wimpernbehandlung.jpg" alt="Lash Treatment"  loading="lazy"/>
       </div>
       <div class="gallery-item">
-        <img src=".//image/Sugaring.jpg" alt="Sugaring" />
+        <img src=".//image/Sugaring.jpg" alt="Sugaring"  loading="lazy"/>
       </div>
     </div>
 
@@ -101,7 +187,7 @@
     <div class="stats-section fade-in">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">150+</div>
+          <div class="stat-number">200+</div>
           <div class="stat-label">Happy Clients</div>
         </div>
         <div class="stat-item">
@@ -129,7 +215,7 @@
       <div class="services-grid">
         <div class="service-card slide-in-left">
           <div class="service-image">
-            <img src=".//image/Laminierung.png" alt="Lash Treatment" />
+            <img src=".//image/Laminierung.png" alt="Lash Treatment"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -146,7 +232,7 @@
             <img
               src=".//image/Styling-Augenbrauen.jpg"
               alt="Eyebrow Treatment"
-            />
+             loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -160,7 +246,7 @@
         </div>
         <div class="service-card slide-in-left">
           <div class="service-image">
-            <img src=".//image/Waxinf-behandlung.png" alt="Waxing Treatment" />
+            <img src=".//image/Waxinf-behandlung.png" alt="Waxing Treatment"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -174,7 +260,7 @@
         </div>
         <div class="service-card slide-in-right">
           <div class="service-image">
-            <img src=".//image/Sugaring-pasta.png" alt="Sugaring Treatment" />
+            <img src=".//image/Sugaring-pasta.jpg" alt="Sugaring Treatment"  loading="lazy"/>
           </div>
           <div class="service-content">
             <div class="service-icon"></div>
@@ -199,9 +285,9 @@
         <div class="before-after-item scale-in">
           <div class="before-after-images">
             <img
-              src=".//image/Wimpern Vorher Nachher.png"
+              src=".//image/Wimpern Vorher Nachher.jpg"
               alt="Lashes Before After"
-            />
+             loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Lash Lifting</h4>
@@ -211,9 +297,9 @@
         <div class="before-after-item scale-in">
           <div class="before-after-images">
             <img
-              src=".//image/Augenbrauen Vorher Nachher.png"
+              src=".//image/Augenbrauen Vorher Nachher.jpg"
               alt="Eyebrows Before After"
-            />
+             loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Brow Lamination</h4>
@@ -222,7 +308,7 @@
         </div>
         <div class="before-after-item scale-in">
           <div class="before-after-images">
-            <img src=".//image/Sugaring Ergebnis.png" alt="Smooth Skin" />
+            <img src=".//image/Sugaring Ergebnis.jpg" alt="Smooth Skin"  loading="lazy"/>
           </div>
           <div class="before-after-label">
             <h4>Sugaring Result</h4>
@@ -236,38 +322,123 @@
     <div class="testimonials-section">
       <h2 class="section-title fade-in">What Our Clients Say</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "The best studio for lash lifting in Frankfurt! The results are
-            always perfect and the ambiance is so relaxing. I've been coming
-            here for a year and am thrilled every time."
-          </p>
-          <p class="testimonial-author">— Sarah M.</p>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Professional, hygienic, and with attention to detail. The brow
-            lamination lasts super long and looks natural. Absolute
-            recommendation!"
-          </p>
-          <p class="testimonial-author">— Lisa K.</p>
-        </div>
-        <div class="testimonial-card fade-in">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Sugaring is much less painful than waxing and the skin stays smooth
-            longer. With the membership card, I also save real money. Top
-            service!"
-          </p>
-          <p class="testimonial-author">— Anna B.</p>
-        </div>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I had my eyebrows shaped. The result turned out great – exactly
+              as I wished. Thank you very much for your friendly and
+              professional manner."
+            </p>
+            <p class="testimonial-author">— Aysegul Akkol</p>
+          </div>
+        </a>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "A wonderful experience! Doina is not only skilled but also
+              incredibly warm and patient. She works with great precision and
+              really takes her time...🥰"
+            </p>
+            <p class="testimonial-author">— Mimi</p>
+          </div>
+        </a>
+        <a
+          href="https://maps.app.goo.gl/ZHQeFT5r3SFgwctk7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="testimonial-link"
+        >
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I've been searching so long for someone who could give me the
+              perfect eyebrow shape – and I finally found her! 😍 Thank you so
+              much for the ... !"
+            </p>
+            <p class="testimonial-author">— Marina Hitrova</p>
+          </div>
+        </a>
       </div>
     </div>
+    <section id="preise">
+      <h2 class="section-title fade-in">Why ilu?</h2>
+
+      <p class="section-subtitle fade-in">
+        Precise results, gentle techniques, and genuine care – that’s why our
+        clients keep choosing ilu.
+      </p>
+
+      <div class="preise-teaser-grid">
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Gentle hair removal products</span>
+
+          <p class="preise-teaser-desc">
+            High-quality wax and natural sugar paste for smooth results, even on
+            sensitive skin.
+          </p>
+        </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Waxing & beauty expertise</span>
+
+          <p class="preise-teaser-desc">
+            Over 5 years of experience in waxing, sugaring, and brow & lash
+            treatments.
+          </p>
+        </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Personalized treatments</span>
+
+          <p class="preise-teaser-desc">
+            Every service is tailored to your skin, hair type, and desired
+            result.
+          </p>
+        </div>
+
+        <div class="preise-teaser-card fade-in">
+          <span class="preise-teaser-icon"></span>
+          <span class="preise-teaser-name">Trusted by many clients</span>
+
+          <p class="preise-teaser-desc">
+            Hundreds of happy clients and consistently excellent reviews in
+            Frankfurt.
+          </p>
+        </div>
+      </div>
+
+      <div class="preise-slogan fade-in">
+        <span class="slogan-line">Transparent pricing.</span>
+        <span class="slogan-line">No hidden surprises.</span>
+
+        <span class="slogan-sub">
+          You can find all waxing, sugaring, and brow & lash treatments in our
+          full price list.
+        </span>
+      </div>
+
+      <div class="preise-cta-wrap fade-in">
+        <a href="preise.html" class="cta-button"> View full price list </a>
+      </div>
+    </section>
 
     <!-- Prices Section -->
-    <section id="preise">
+    <!-- <section id="preise">
       <h2 class="section-title fade-in">Prices</h2>
       <p class="section-subtitle fade-in">
         View our complete price list and meet our team
@@ -275,37 +446,7 @@
       <div style="text-align: center; padding: 3rem 0">
         <a href="preise-en.html" class="cta-button">To Detailed Price List</a>
       </div>
-    </section>
-
-    <!-- Membership Card Section -->
-    <section id="kundenkarte">
-      <h2 class="section-title">Membership Card</h2>
-      <div class="kundenkarte-box">
-        <div class="kundenkarte-content">
-          <h3>170€ Annual Fee – Save All Year Long</h3>
-          <p>
-            Pay a one-time fee of 170€ and enjoy reduced prices on all our
-            treatments for 12 months. No minimum visits required, no hidden
-            costs – simply save every time!
-          </p>
-          <div class="kundenkarte-price">Save up to 30%</div>
-          <ul class="benefits-list">
-            <li>Only 170€ once per year</li>
-            <li>Up to 30% discount on every treatment</li>
-            <li>Valid for all waxing & sugaring zones</li>
-            <li>No minimum visits – come as often as you like</li>
-            <li>Valid for 12 months from purchase date</li>
-            <li>Priority booking privileges</li>
-          </ul>
-          <a
-            href="kundenkarte-en.html"
-            class="cta-button"
-            style="margin-top: 2rem"
-            >Learn More About Membership Card</a
-          >
-        </div>
-      </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="kontakt">
@@ -321,14 +462,14 @@
           </div>
           <div class="contact-item">
             <h4>Phone</h4>
-            <p>📞 <a href="tel:+4901637394921">+49 0163 7394921</a></p>
+            <p>📞 <a href="tel:+491637394921">+49 163 7394921</a></p>
           </div>
           <div class="contact-item">
             <h4>Email</h4>
             <p>
               ✉️
-              <a href="mailto:ilu.aestethicstudio@gmail.com"
-                >ilu.aestethicstudio@gmail.com</a
+              <a href="mailto:iluconcept2026@gmail.com"
+                >iluconcept2026@gmail.com</a
               >
             </p>
           </div>
@@ -360,9 +501,9 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>Opening Hours</h3>
-          <p>Mon, Wed, Fri: 10:00 AM - 3:00 PM</p>
-          <p>Tue, Thu: 12:00 PM - 7:00 PM</p>
-          <p>Sat: 12:00 PM - 4:00 PM</p>
+          <p>Mon, Wed, Fri: 10:00 AM – 3:00 PM</p>
+          <p>Tue, Thu: 12:00 PM – 7:00 PM</p>
+          <p>Sat: 12:00 PM – 4:00 PM</p>
           <p>Sun: Closed</p>
         </div>
         <div class="footer-section">
@@ -411,16 +552,15 @@
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-
-       <div class="floating-contact-item">
+      <div class="floating-contact-item">
         <a
           href="https://buchung.treatwell.de/ort/519743/menue/"
           target="_blank"
           class="contact-button treatwell-button"
-          aria-label="Online Termin buchen"
+          aria-label="Book Online"
         >
           <span class="contact-button-label">Book Online</span>
-         <img src="./image/calendar.svg" width="28" height="28" alt="Termin" />
+          <img src="./image/calendar.svg" width="28" height="28" alt="Book"  loading="lazy"/>
         </a>
       </div>
       <div class="floating-contact-item">
@@ -430,8 +570,7 @@
           class="contact-button whatsapp-button"
           aria-label="WhatsApp Contact"
         >
-          <span class="contact-button-label">WhatsApp</span>
-          💬
+          <span class="contact-button-label">WhatsApp</span>💬
         </a>
       </div>
       <div class="floating-contact-item">
@@ -440,8 +579,7 @@
           class="contact-button phone-button"
           aria-label="Call"
         >
-          <span class="contact-button-label">Call</span>
-          📞
+          <span class="contact-button-label">Call</span>📞
         </a>
       </div>
     </div>
@@ -452,32 +590,22 @@
         navLinks.classList.toggle("active");
       }
 
-      // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
           const targetId = this.getAttribute("href");
           const targetElement = document.querySelector(targetId);
-
           if (targetElement) {
             const offset = 100;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition =
               elementPosition + window.pageYOffset - offset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
+            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
           }
-
-          // Close mobile menu after clicking
-          const navLinks = document.getElementById("navLinks");
-          navLinks.classList.remove("active");
+          document.getElementById("navLinks").classList.remove("active");
         });
       });
 
-      // Change navigation background on scroll
       window.addEventListener("scroll", function () {
         const nav = document.querySelector("nav");
         if (window.scrollY > 50) {
@@ -487,28 +615,23 @@
         }
       });
 
-      // Intersection Observer for scroll animations
       const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -100px 0px",
       };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("visible");
         });
       }, observerOptions);
 
-      // Observe all animated elements
       document.addEventListener("DOMContentLoaded", () => {
-        const animatedElements = document.querySelectorAll(
-          ".fade-in, .slide-in-left, .slide-in-right, .scale-in",
-        );
-        animatedElements.forEach((el) => observer.observe(el));
+        document
+          .querySelectorAll(
+            ".fade-in, .slide-in-left, .slide-in-right, .scale-in",
+          )
+          .forEach((el) => observer.observe(el));
 
-        // Animate stats numbers
         const statNumbers = document.querySelectorAll(".stat-number");
         const statsObserver = new IntersectionObserver(
           (entries) => {
@@ -517,7 +640,6 @@
                 const target = entry.target;
                 const finalValue = target.textContent;
                 const numericValue = parseInt(finalValue.replace(/\D/g, ""));
-
                 if (!isNaN(numericValue)) {
                   let current = 0;
                   const increment = numericValue / 50;
@@ -543,18 +665,40 @@
           },
           { threshold: 0.5 },
         );
-
         statNumbers.forEach((stat) => statsObserver.observe(stat));
       });
 
-      // Add parallax effect to hero
       window.addEventListener("scroll", () => {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector(".hero");
-        if (hero) {
-          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
+        if (hero) hero.style.transform = `translateY(${scrolled * 0.5}px)`;
       });
+
+      // ===== Packages Popup: appears after 3 seconds, once per session =====
+      (function () {
+        var STORAGE_KEY = "iluPkgPopupShownEn";
+        if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var overlay = document.getElementById("iluPkgOverlay");
+          var closeBtn = document.getElementById("iluPkgClose");
+
+          setTimeout(function () {
+            overlay.classList.add("active");
+            sessionStorage.setItem(STORAGE_KEY, "1");
+          }, 3000);
+
+          closeBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            overlay.classList.remove("active");
+          });
+
+          overlay.addEventListener("click", function (e) {
+            if (e.target === overlay) overlay.classList.remove("active");
+          });
+        });
+      })();
     </script>
     <script src="cookie-banner.js"></script>
   </body>

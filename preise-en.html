@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-GCESVR7HGB"
@@ -17,15 +16,17 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/favicon.png" type="image/png" />
     <title>Treatments & Prices • ilu Aesthetic Studio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style-preise-en.css" />
+    <!-- shares the same stylesheet as the DE version -->
+    <link rel="stylesheet" href="style-preise.css" />
   </head>
+
   <body>
-    <!-- Navigation -->
     <nav>
       <div class="nav-content">
         <a href="index-en.html" class="logo">ilu</a>
@@ -34,7 +35,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="index-en.html">Home</a></li>
             <li><a href="preise-en.html">Treatments & Prices</a></li>
-            <li><a href="kundenkarte-en.html">Membership Card</a></li>
+            <li><a href="kundenkarte-en.html">Packages</a></li>
             <li><a href="index-en.html#kontakt">Contact</a></li>
           </ul>
           <div class="language-selector">
@@ -45,7 +46,6 @@
       </div>
     </nav>
 
-    <!-- Page Header -->
     <div class="page-header">
       <h1>Treatments & Prices</h1>
       <p>
@@ -53,15 +53,14 @@
       </p>
     </div>
 
-    <!-- Specialist Section -->
     <div class="specialist-section fade-in">
       <div class="specialist-container">
         <div class="specialist-image">
           <img
-            src="images/specialist.jpg"
+            src="./image/Beauty-Specialist.jpg"
             alt="Beauty Specialist"
             onerror="this.src = './/image/Beauty-Specialist.jpg'"
-          />
+           loading="lazy"/>
         </div>
         <div class="specialist-content">
           <h2>Your Specialist</h2>
@@ -88,20 +87,41 @@
               <li>Specialization in Lashes & Brows</li>
               <li>Sugaring & Waxing Expert</li>
               <li>Lamination & Lifting Specialist</li>
-              <li>Regular training in latest techniques</li>
+              <li>Regular training in the latest techniques</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Treatments & Prices -->
     <section>
       <h2 class="section-title fade-in">Our Treatments</h2>
 
+      <!-- Ladies / Gentlemen filter -->
+      <div class="filter-section fade-in">
+        <div class="filter-row">
+          <button
+            class="filter-btn active"
+            data-value="ladies"
+            onclick="setGender('ladies')"
+          >
+            Ladies
+          </button>
+          <button
+            class="filter-btn"
+            data-value="gents"
+            onclick="setGender('gents')"
+          >
+            Gentlemen
+          </button>
+        </div>
+      </div>
+
       <div class="treatment-details">
-        <!-- Lashes & Brows -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             LASHES & BROWS (Ladies only, no toggle)
+             ═══════════════════════════════════════════ -->
+        <div class="treatment-category fade-in" id="cat-lashes">
           <div class="treatment-header">
             <div class="treatment-info">
               <h3>Lashes & Brows</h3>
@@ -111,384 +131,493 @@
                 techniques as well as precise shaping, we create the perfect
                 look for you.
               </p>
-              <p style="margin-top: 1rem">
-                Our high-quality products are gentle on the skin and ensure
-                long-lasting, naturally beautiful results. Each treatment is
-                individually tailored to your wishes.
-              </p>
             </div>
             <div class="treatment-image">
               <img
-                src="./image/Augenbraunfaerbung.jpeg"
+                src="/image/Augenbraunfaerbung.jpeg"
                 alt="Lashes and Brows"
-                onerror="this.src = './image/Prozedure.png'"
-              />
+                onerror="this.src = './/image/Augenbraunfaerbung.jpeg'"
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name">Lash Lifting / Lash Lamination</span>
-              <span class="price-value">€55</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Lash Lifting + Tinting</span>
-              <span class="price-value">€65</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Lash Tinting</span>
-              <span class="price-value">€15</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Brow Shaping (Plucking/Waxing/Threading)</span
-              >
-              <span class="price-value">€22</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brow Shaping + Tinting</span>
-              <span class="price-value">€35</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brow Lamination (without shaping)</span>
-              <span class="price-value">€45</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brow Shaping + Lamination</span>
-              <span class="price-value">€60</span>
-            </div>
-            <div class="price-item">
-              <span class="price-name"
-                >Complete Package (Shaping + Lamination + Tinting)</span
-              >
-              <span class="price-value">€70</span>
-            </div>
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Treatment</th>
+                  <th class="col-price wax-active">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Lashes</td>
+                </tr>
+                <tr>
+                  <td>Lash Lifting / Lash Lamination</td>
+                  <td class="col-price">€55</td>
+                </tr>
+                <tr>
+                  <td>Lash Lamination + Tinting</td>
+                  <td class="col-price">€65</td>
+                </tr>
+                <tr>
+                  <td>Lash Tinting</td>
+                  <td class="col-price">€15</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Brows</td>
+                </tr>
+                <tr>
+                  <td>Brow Shaping (Plucking / Waxing / Threading)</td>
+                  <td class="col-price">€22</td>
+                </tr>
+                <tr>
+                  <td>Brow Tinting</td>
+                  <td class="col-price">€15</td>
+                </tr>
+                <tr>
+                  <td>Brow Shaping + Tinting</td>
+                  <td class="col-price">€35</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Complete Package</td>
+                </tr>
+                <tr>
+                  <td>Complete Package (Shaping + Lamination + Tinting)</td>
+                  <td class="col-price">€65</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Threading (Face)</td>
+                </tr>
+                <tr>
+                  <td>Chin</td>
+                  <td class="col-price">€10</td>
+                </tr>
+                <tr>
+                  <td>Forehead</td>
+                  <td class="col-price">€19</td>
+                </tr>
+                <tr>
+                  <td>Brows</td>
+                  <td class="col-price">€15</td>
+                </tr>
+                <tr>
+                  <td>Upper Lip</td>
+                  <td class="col-price">€10</td>
+                </tr>
+                <tr>
+                  <td>Cheeks</td>
+                  <td class="col-price">€12</td>
+                </tr>
+                <tr>
+                  <td>Full Face</td>
+                  <td class="col-price">€40</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Waxing -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             HAIR REMOVAL LADIES – Waxing / Sugaring toggle
+             ═══════════════════════════════════════════ -->
+        <div class="treatment-category fade-in" id="cat-ladies">
           <div class="treatment-header">
             <div class="treatment-info">
-              <h3>Waxing</h3>
+              <h3>Hair Removal – Ladies</h3>
               <p>
-                Professional hair removal with high-quality warm wax for
-                long-lasting smooth skin. Our waxing treatments are quick,
-                effective, and provide results that last up to 4 weeks.
-              </p>
-              <p style="margin-top: 1rem">
-                We only use high-quality wax that is gentle on the skin and
-                causes minimal irritation. Ideal for all body areas - from face
-                to legs.
+                Choose your preferred method – both provide long-lasting smooth
+                results.
               </p>
             </div>
             <div class="treatment-image">
               <img
-                src="./image/Prozedure.png"
-                alt="Waxing"
+                src="./image/Prozedure.jpg"
+                alt="Hair Removal"
                 onerror="this.src = './image/Prozedure.png'"
-              />
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list-header">
-            <span>Treatment</span>
-            <div class="price-list-header-prices">
-              <span>Regular</span>
-              <span>With Card</span>
+
+          <div class="price-table-wrap">
+            <div class="method-toggle">
+              <button
+                class="mtoggle-btn wax active"
+                onclick="setMethod('wax', 'ladies')"
+              >
+                Waxing
+              </button>
+              <button
+                class="mtoggle-btn sugar"
+                onclick="setMethod('sugar', 'ladies')"
+              >
+                Sugaring
+              </button>
             </div>
-          </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name">Upper Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€28</span>
-                <span class="price-with-card">€21</span>
-              </div>
+
+            <div class="method-desc" id="desc-ladies">
+              <h4 id="desc-ladies-title">Waxing</h4>
+              <p id="desc-ladies-text">
+                Professional hair removal with high-quality warm wax. Quick and
+                effective for all body areas – from legs to bikini area to face
+                and back. Skin stays smooth for up to <strong>4 weeks</strong>.
+                Ideal for those who want a fast and reliable result.
+              </p>
             </div>
-            <div class="price-item">
-              <span class="price-name">Lower Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€28</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€39</span>
-                <span class="price-with-card">€31</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini Classic</span>
-              <div class="price-dual">
-                <span class="price-regular">€22</span>
-                <span class="price-with-card">€16</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brazilian Bikini</span>
-              <div class="price-dual">
-                <span class="price-regular">€29</span>
-                <span class="price-with-card">€22</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Bikini</span>
-              <div class="price-dual">
-                <span class="price-regular">€44</span>
-                <span class="price-with-card">€36</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Buttocks</span>
-              <div class="price-dual">
-                <span class="price-regular">€22</span>
-                <span class="price-with-card">€14</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Lower Back</span>
-              <div class="price-dual">
-                <span class="price-regular">€25</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Shoulders</span>
-              <div class="price-dual">
-                <span class="price-regular">€30</span>
-                <span class="price-with-card">€25</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Back</span>
-              <div class="price-dual">
-                <span class="price-regular">€48</span>
-                <span class="price-with-card">€37</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Abdomen</span>
-              <div class="price-dual">
-                <span class="price-regular">€22</span>
-                <span class="price-with-card">€16</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Chest</span>
-              <div class="price-dual">
-                <span class="price-regular">€29</span>
-                <span class="price-with-card">€22</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Underarms</span>
-              <div class="price-dual">
-                <span class="price-regular">€19</span>
-                <span class="price-with-card">€13</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Forearms</span>
-              <div class="price-dual">
-                <span class="price-regular">€21</span>
-                <span class="price-with-card">€18</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Arms</span>
-              <div class="price-dual">
-                <span class="price-regular">€30</span>
-                <span class="price-with-card">€24</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Hands</span>
-              <div class="price-dual">
-                <span class="price-regular">€16</span>
-                <span class="price-with-card">€14</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Feet</span>
-              <div class="price-dual">
-                <span class="price-regular">€16</span>
-                <span class="price-with-card">€14</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Nose / Ears</span>
-              <div class="price-dual">
-                <span class="price-regular">€16</span>
-                <span class="price-with-card">€14</span>
-              </div>
-            </div>
+
+            <table class="price-table" id="table-ladies">
+              <thead>
+                <tr>
+                  <th>Treatment</th>
+                  <th class="col-price wax-active" id="th-ladies">Waxing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Face</td>
+                </tr>
+                <tr>
+                  <td>Brows</td>
+                  <td class="col-price" data-wax="€15" data-sugar="€16">€15</td>
+                </tr>
+                <tr>
+                  <td>Upper Lip / Chin</td>
+                  <td class="col-price" data-wax="€10" data-sugar="€15">€10</td>
+                </tr>
+                <tr>
+                  <td>Nose</td>
+                  <td class="col-price" data-wax="€12" data-sugar="—">€12</td>
+                </tr>
+                <tr>
+                  <td>Cheeks</td>
+                  <td class="col-price" data-wax="€12" data-sugar="€18">€12</td>
+                </tr>
+                <tr>
+                  <td>Ears</td>
+                  <td class="col-price" data-wax="€12" data-sugar="€12">€12</td>
+                </tr>
+                <tr>
+                  <td>Neck</td>
+                  <td class="col-price" data-wax="€18" data-sugar="€18">€18</td>
+                </tr>
+                <tr>
+                  <td>Full Face</td>
+                  <td class="col-price" data-wax="€35" data-sugar="€45">€35</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Underarms & Upper Body</td>
+                </tr>
+                <tr>
+                  <td>Underarms</td>
+                  <td class="col-price" data-wax="€18" data-sugar="€25">€18</td>
+                </tr>
+                <tr>
+                  <td>Stomach Line</td>
+                  <td class="col-price" data-wax="€8" data-sugar="€10">€8</td>
+                </tr>
+                <tr>
+                  <td>Stomach</td>
+                  <td class="col-price" data-wax="€18" data-sugar="€24">€18</td>
+                </tr>
+                <tr>
+                  <td>Chest</td>
+                  <td class="col-price" data-wax="€28" data-sugar="€35">€28</td>
+                </tr>
+                <tr>
+                  <td>Chest + Stomach</td>
+                  <td class="col-price" data-wax="€38" data-sugar="—">€38</td>
+                </tr>
+                <tr>
+                  <td>Shoulders</td>
+                  <td class="col-price" data-wax="€28" data-sugar="€38">€28</td>
+                </tr>
+                <tr>
+                  <td>Nape</td>
+                  <td class="col-price" data-wax="€12" data-sugar="—">€12</td>
+                </tr>
+                <tr>
+                  <td>Lower Back</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€28">€20</td>
+                </tr>
+                <tr>
+                  <td>Full Back</td>
+                  <td class="col-price" data-wax="€45" data-sugar="€42">€45</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Arms & Hands</td>
+                </tr>
+                <tr>
+                  <td>Forearms</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€30">€20</td>
+                </tr>
+                <tr>
+                  <td>Upper Arms</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€30">€20</td>
+                </tr>
+                <tr>
+                  <td>Full Arms</td>
+                  <td class="col-price" data-wax="€30" data-sugar="€42">€30</td>
+                </tr>
+                <tr>
+                  <td>Hands</td>
+                  <td class="col-price" data-wax="€12" data-sugar="€15">€12</td>
+                </tr>
+                <tr>
+                  <td>Fingers</td>
+                  <td class="col-price" data-wax="€5" data-sugar="€5">€5</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Bikini & Intimate</td>
+                </tr>
+                <tr>
+                  <td>Bikini Classic</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€25">€20</td>
+                </tr>
+                <tr>
+                  <td>Brazilian Bikini</td>
+                  <td class="col-price" data-wax="€30" data-sugar="€35">€30</td>
+                </tr>
+                <tr>
+                  <td>Full Bikini (Hollywood)</td>
+                  <td class="col-price" data-wax="€42" data-sugar="€50">€42</td>
+                </tr>
+                <tr>
+                  <td>Buttock Crease</td>
+                  <td class="col-price" data-wax="€15" data-sugar="€18">€15</td>
+                </tr>
+                <tr>
+                  <td>Buttocks</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€25">€20</td>
+                </tr>
+                <tr>
+                  <td>Buttocks + Crease</td>
+                  <td class="col-price" data-wax="€30" data-sugar="€38">€30</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Legs & Feet</td>
+                </tr>
+                <tr>
+                  <td>Upper Legs</td>
+                  <td class="col-price" data-wax="€25" data-sugar="€38">€25</td>
+                </tr>
+                <tr>
+                  <td>Lower Legs</td>
+                  <td class="col-price" data-wax="€25" data-sugar="€38">€25</td>
+                </tr>
+                <tr>
+                  <td>Full Legs</td>
+                  <td class="col-price" data-wax="€40" data-sugar="€58">€40</td>
+                </tr>
+                <tr>
+                  <td>Feet</td>
+                  <td class="col-price" data-wax="€8" data-sugar="€10">€8</td>
+                </tr>
+                <tr>
+                  <td>Toes</td>
+                  <td class="col-price" data-wax="€5" data-sugar="€5">€5</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Sugaring -->
-        <div class="treatment-category fade-in">
+        <!-- ═══════════════════════════════════════════
+             HAIR REMOVAL GENTLEMEN – Waxing / Sugaring toggle
+             ═══════════════════════════════════════════ -->
+        <div
+          class="treatment-category fade-in"
+          id="cat-gents"
+          style="display: none"
+        >
           <div class="treatment-header">
             <div class="treatment-info">
-              <h3>Sugaring</h3>
+              <h3>Hair Removal – Gentlemen</h3>
               <p>
-                Gentle hair removal with natural sugar paste - the gentle
-                alternative to waxing. Sugaring is particularly skin-friendly
-                and perfect for sensitive skin.
-              </p>
-              <p style="margin-top: 1rem">
-                The natural sugar paste only adheres to the hair, not the skin,
-                leading to less irritation and a more pleasant experience.
-                Results last up to 6 weeks and hair grows back finer.
+                Choose your preferred method – both provide long-lasting smooth
+                results.
               </p>
             </div>
             <div class="treatment-image">
               <img
-                src="images/pasta.png"
-                alt="Sugaring"
-                onerror="this.src = './/image/pasta.png'"
-              />
+                src="./image/Prozedure.jpg"
+                alt="Hair Removal Gentlemen"
+                onerror="this.src = './image/Prozedure.png'"
+               loading="lazy"/>
             </div>
           </div>
-          <div class="price-list-header">
-            <span>Treatment</span>
-            <div class="price-list-header-prices">
-              <span>Regular</span>
-              <span>With Card</span>
+
+          <div class="price-table-wrap">
+            <div class="method-toggle">
+              <button
+                class="mtoggle-btn wax active"
+                onclick="setMethod('wax', 'gents')"
+              >
+                Waxing
+              </button>
+              <button
+                class="mtoggle-btn sugar"
+                onclick="setMethod('sugar', 'gents')"
+              >
+                Sugaring
+              </button>
             </div>
-          </div>
-          <div class="price-list">
-            <div class="price-item">
-              <span class="price-name">Upper Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€39</span>
-                <span class="price-with-card">€31</span>
-              </div>
+
+            <div class="method-desc" id="desc-gents">
+              <h4 id="desc-gents-title">Waxing</h4>
+              <p id="desc-gents-text">
+                Professional hair removal with high-quality warm wax, specially
+                tailored to the stronger male skin. Quick and precise for chest,
+                back, shoulders and more. Skin stays smooth for up to
+                <strong>4 weeks</strong>.
+              </p>
             </div>
-            <div class="price-item">
-              <span class="price-name">Lower Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€39</span>
-                <span class="price-with-card">€31</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Legs</span>
-              <div class="price-dual">
-                <span class="price-regular">€65</span>
-                <span class="price-with-card">€53</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Bikini Classic</span>
-              <div class="price-dual">
-                <span class="price-regular">€28</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Brazilian Bikini</span>
-              <div class="price-dual">
-                <span class="price-regular">€37</span>
-                <span class="price-with-card">€28</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Bikini</span>
-              <div class="price-dual">
-                <span class="price-regular">€54</span>
-                <span class="price-with-card">€43</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Buttocks</span>
-              <div class="price-dual">
-                <span class="price-regular">€26</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Lower Back</span>
-              <div class="price-dual">
-                <span class="price-regular">€31</span>
-                <span class="price-with-card">€25</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Shoulders</span>
-              <div class="price-dual">
-                <span class="price-regular">€42</span>
-                <span class="price-with-card">€35</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Back</span>
-              <div class="price-dual">
-                <span class="price-regular">€64</span>
-                <span class="price-with-card">€53</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Abdomen</span>
-              <div class="price-dual">
-                <span class="price-regular">€26</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Chest</span>
-              <div class="price-dual">
-                <span class="price-regular">€38</span>
-                <span class="price-with-card">€28</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Underarms</span>
-              <div class="price-dual">
-                <span class="price-regular">€27</span>
-                <span class="price-with-card">€21</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Forearms</span>
-              <div class="price-dual">
-                <span class="price-regular">€32</span>
-                <span class="price-with-card">€26</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Full Arms</span>
-              <div class="price-dual">
-                <span class="price-regular">€43</span>
-                <span class="price-with-card">€32</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Upper Lip</span>
-              <div class="price-dual">
-                <span class="price-regular">€17</span>
-                <span class="price-with-card">€13</span>
-              </div>
-            </div>
-            <div class="price-item">
-              <span class="price-name">Hands / Feet</span>
-              <div class="price-dual">
-                <span class="price-regular">€19</span>
-                <span class="price-with-card">€14</span>
-              </div>
-            </div>
-          </div>
-          <div class="price-note">
-            💡 <strong>Membership Card:</strong> Pay a one-time fee of 170€ per
-            year and enjoy the reduced prices shown in the "With Card" column.
-            Save up to 30% on every treatment – the more you visit, the more you
-            save! <a href="kundenkarte-en.html">Learn more →</a>
+
+            <table class="price-table" id="table-gents">
+              <thead>
+                <tr>
+                  <th>Treatment</th>
+                  <th class="col-price wax-active" id="th-gents">Waxing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zone-row">
+                  <td colspan="2">Face</td>
+                </tr>
+                <tr>
+                  <td>Brow Plucking</td>
+                  <td class="col-price" data-wax="€12" data-sugar="—">€12</td>
+                </tr>
+                <tr>
+                  <td>Brow Shaping</td>
+                  <td class="col-price" data-wax="€18" data-sugar="—">€18</td>
+                </tr>
+                <tr>
+                  <td>Nose</td>
+                  <td class="col-price" data-wax="€10" data-sugar="—">€10</td>
+                </tr>
+                <tr>
+                  <td>Ears</td>
+                  <td class="col-price" data-wax="€10" data-sugar="—">€10</td>
+                </tr>
+                <tr>
+                  <td>Cheeks</td>
+                  <td class="col-price" data-wax="€15" data-sugar="€18">€15</td>
+                </tr>
+                <tr>
+                  <td>Neck</td>
+                  <td class="col-price" data-wax="€18" data-sugar="€20">€18</td>
+                </tr>
+                <tr>
+                  <td>Full Face</td>
+                  <td class="col-price" data-wax="€38" data-sugar="—">€38</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Underarms & Upper Body</td>
+                </tr>
+                <tr>
+                  <td>Underarms</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€28">€20</td>
+                </tr>
+                <tr>
+                  <td>Stomach</td>
+                  <td class="col-price" data-wax="€20" data-sugar="€28">€20</td>
+                </tr>
+                <tr>
+                  <td>Chest</td>
+                  <td class="col-price" data-wax="€30" data-sugar="€38">€30</td>
+                </tr>
+                <tr>
+                  <td>Chest + Stomach</td>
+                  <td class="col-price" data-wax="€45" data-sugar="€60">€45</td>
+                </tr>
+                <tr>
+                  <td>Shoulders</td>
+                  <td class="col-price" data-wax="€30" data-sugar="€40">€30</td>
+                </tr>
+                <tr>
+                  <td>Nape</td>
+                  <td class="col-price" data-wax="€15" data-sugar="€20">€15</td>
+                </tr>
+                <tr>
+                  <td>Lower Back</td>
+                  <td class="col-price" data-wax="€24" data-sugar="€30">€24</td>
+                </tr>
+                <tr>
+                  <td>Full Back</td>
+                  <td class="col-price" data-wax="€50" data-sugar="€65">€50</td>
+                </tr>
+                <tr>
+                  <td>Back + Shoulders</td>
+                  <td class="col-price" data-wax="€58" data-sugar="€75">€58</td>
+                </tr>
+                <tr>
+                  <td>Back + Shoulders + Nape</td>
+                  <td class="col-price" data-wax="€65" data-sugar="€85">€65</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Arms & Hands</td>
+                </tr>
+                <tr>
+                  <td>Forearms</td>
+                  <td class="col-price" data-wax="€22" data-sugar="€32">€22</td>
+                </tr>
+                <tr>
+                  <td>Upper Arms</td>
+                  <td class="col-price" data-wax="€22" data-sugar="€32">€22</td>
+                </tr>
+                <tr>
+                  <td>Full Arms</td>
+                  <td class="col-price" data-wax="€32" data-sugar="€45">€32</td>
+                </tr>
+                <tr>
+                  <td>Hands</td>
+                  <td class="col-price" data-wax="€12" data-sugar="€15">€12</td>
+                </tr>
+                <tr>
+                  <td>Fingers</td>
+                  <td class="col-price" data-wax="€5" data-sugar="€5">€5</td>
+                </tr>
+
+                <tr class="zone-row">
+                  <td colspan="2">Legs & Feet</td>
+                </tr>
+                <tr>
+                  <td>Lower Legs</td>
+                  <td class="col-price" data-wax="€28" data-sugar="€40">€28</td>
+                </tr>
+                <tr>
+                  <td>Upper Legs</td>
+                  <td class="col-price" data-wax="€28" data-sugar="€40">€28</td>
+                </tr>
+                <tr>
+                  <td>Full Legs</td>
+                  <td class="col-price" data-wax="€45" data-sugar="€60">€45</td>
+                </tr>
+                <tr>
+                  <td>Feet</td>
+                  <td class="col-price" data-wax="€8" data-sugar="€10">€8</td>
+                </tr>
+                <tr>
+                  <td>Toes</td>
+                  <td class="col-price" data-wax="€5" data-sugar="€5">€5</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+      <!-- /treatment-details -->
     </section>
 
-    <!-- CTA Section -->
     <div class="cta-section">
       <h2>Ready for Your Transformation?</h2>
       <p>
@@ -501,20 +630,19 @@
       <a href="tel:+4901637394921" class="cta-button secondary">📞 Call</a>
     </div>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-content">
         <div class="footer-section">
           <h3>Opening Hours</h3>
-          <p>Mon, Wed, Fri: 10:00 AM - 3:00 PM</p>
-          <p>Tue, Thu: 12:00 PM - 7:00 PM</p>
-          <p>Sat: 12:00 PM - 4:00 PM</p>
+          <p>Mon, Wed, Fri: 10:00 AM – 3:00 PM</p>
+          <p>Tue, Thu: 12:00 PM – 7:00 PM</p>
+          <p>Sat: 12:00 PM – 4:00 PM</p>
           <p>Sun: Closed</p>
         </div>
         <div class="footer-section">
           <h3>Contact</h3>
           <p>📞 +49 0163 7394921</p>
-          <p>✉️ ilu.aestethicstudio@gmail.com</p>
+          <p>✉️ iluconcept2026@gmail.com</p>
           <p>📍 Egenolffstraße 19, Frankfurt am Main</p>
         </div>
         <div class="footer-section">
@@ -541,26 +669,29 @@
       </div>
       <div class="footer-bottom">
         <p>
-          © 2026 ilu • Aesthetic Studio Frankfurt • All Rights Reserved
-          <br />
-          <a href="impressum-en.html" style="color: var(--cream); margin-right: 1.5rem;">Legal Notice</a>
-          <a href="datenschutz-en.html" style="color: var(--cream);">Privacy Policy</a>
+          © 2026 ilu • Aesthetic Studio Frankfurt • All Rights Reserved<br />
+          <a
+            href="impressum-en.html"
+            style="color: var(--cream); margin-right: 1.5rem"
+            >Legal Notice</a
+          >
+          <a href="datenschutz-en.html" style="color: var(--cream)"
+            >Privacy Policy</a
+          >
         </p>
       </div>
     </footer>
 
-    <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-          <div class="floating-contact">
       <div class="floating-contact-item">
         <a
           href="https://buchung.treatwell.de/ort/519743/menue/"
           target="_blank"
           class="contact-button treatwell-button"
-          aria-label="Online Termin buchen"
+          aria-label="Book Online"
         >
           <span class="contact-button-label">Book Online</span>
-          <img src="./image/calendar.svg" width="28" height="28" alt="Termin" />
+          <img src="./image/calendar.svg" width="28" height="28" alt="Book"  loading="lazy"/>
         </a>
       </div>
       <div class="floating-contact-item">
@@ -570,8 +701,7 @@
           class="contact-button whatsapp-button"
           aria-label="WhatsApp Contact"
         >
-          <span class="contact-button-label">WhatsApp</span>
-          💬
+          <span class="contact-button-label">WhatsApp</span>💬
         </a>
       </div>
       <div class="floating-contact-item">
@@ -580,66 +710,110 @@
           class="contact-button phone-button"
           aria-label="Call"
         >
-          <span class="contact-button-label">Call</span>
-          📞
+          <span class="contact-button-label">Call</span>📞
         </a>
       </div>
     </div>
 
     <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.toggle("active");
-      }
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetElement = document.querySelector(targetId);
-
-          if (targetElement) {
-            const offset = 100;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition =
-              elementPosition + window.pageYOffset - offset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // Intersection Observer for scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
+      /* ── descriptions ─────────────────────────────── */
+      const DESCRIPTIONS = {
+        ladies: {
+          wax: {
+            title: "Waxing",
+            text: "Professional hair removal with high-quality warm wax. Quick and effective for all body areas – from legs to bikini area to face and back. Skin stays smooth for up to <strong>4 weeks</strong>. Ideal for those who want a fast and reliable result.",
+          },
+          sugar: {
+            title: "Sugaring",
+            text: "Gentle hair removal with natural sugar paste – no artificial resins and more skin-friendly than waxing. The paste only adheres to the hair, not the skin: less redness, fewer irritations. Results last up to <strong>6 weeks</strong> and hair grows back finer. Especially suitable for sensitive skin.",
+          },
+        },
+        gents: {
+          wax: {
+            title: "Waxing",
+            text: "Professional hair removal with high-quality warm wax, specially tailored to the stronger male skin. Quick and precise for chest, back, shoulders and more. Skin stays smooth for up to <strong>4 weeks</strong>.",
+          },
+          sugar: {
+            title: "Sugaring",
+            text: "Natural sugar paste that works gently and effectively even on thicker male skin. Adheres exclusively to the hair – less redness, fewer irritations. Results last up to <strong>6 weeks</strong>, hair grows back finer.",
+          },
+        },
       };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+      const activeMethod = { ladies: "wax", gents: "wax" };
+
+      function setMethod(method, gender) {
+        activeMethod[gender] = method;
+        const cat = document.getElementById("cat-" + gender);
+        cat
+          .querySelectorAll(".mtoggle-btn")
+          .forEach((btn) =>
+            btn.classList.toggle("active", btn.classList.contains(method)),
+          );
+        const desc = DESCRIPTIONS[gender][method];
+        document.getElementById("desc-" + gender + "-title").innerHTML =
+          desc.title;
+        document.getElementById("desc-" + gender + "-text").innerHTML =
+          desc.text;
+        const descEl = document.getElementById("desc-" + gender);
+        descEl.className = "method-desc" + (method === "sugar" ? " sugar" : "");
+        const th = document.getElementById("th-" + gender);
+        th.textContent = method === "wax" ? "Waxing" : "Sugaring";
+        th.className =
+          "col-price " + (method === "wax" ? "wax-active" : "sugar-active");
+        document
+          .getElementById("table-" + gender)
+          .querySelectorAll("td.col-price")
+          .forEach((td) => {
+            const val = td.dataset[method];
+            td.textContent = val || "—";
+            td.classList.toggle("empty", !val || val === "—");
+          });
+      }
+
+      function setGender(gender) {
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((btn) =>
+            btn.classList.toggle("active", btn.dataset.value === gender),
+          );
+        document.getElementById("cat-lashes").style.display =
+          gender === "ladies" ? "" : "none";
+        document.getElementById("cat-ladies").style.display =
+          gender === "ladies" ? "" : "none";
+        document.getElementById("cat-gents").style.display =
+          gender === "gents" ? "" : "none";
+      }
+
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const el = document.querySelector(a.getAttribute("href"));
+          if (el)
+            window.scrollTo({
+              top: el.getBoundingClientRect().top + pageYOffset - 100,
+              behavior: "smooth",
+            });
         });
-      }, observerOptions);
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const animatedElements = document.querySelectorAll(".fade-in");
-        animatedElements.forEach((el) => observer.observe(el));
       });
-
-      // Navigation scroll effect
-      window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-          nav.style.boxShadow = "0 4px 30px rgba(38, 20, 12, 0.3)";
-        } else {
-          nav.style.boxShadow = "0 2px 20px rgba(38, 20, 12, 0.15)";
-        }
+      window.addEventListener("scroll", () => {
+        document.querySelector("nav").style.boxShadow =
+          scrollY > 50
+            ? "0 4px 30px rgba(38,20,12,0.3)"
+            : "0 2px 20px rgba(38,20,12,0.15)";
+      });
+      const obs = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          }),
+        { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+      );
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".fade-in").forEach((el) => obs.observe(el));
       });
     </script>
     <script src="cookie-banner.js"></script>

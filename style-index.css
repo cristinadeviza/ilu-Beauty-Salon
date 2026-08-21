@@ -681,6 +681,11 @@ section {
   max-width: 1400px;
   margin: 0 auto;
 }
+.testimonial-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 .testimonial-card {
   background: white;
@@ -757,7 +762,210 @@ section {
   text-transform: uppercase;
   font-weight: 300;
 }
+/* ── Preise teaser section ─────────────────────────── */
+.preise-slogan {
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.preise-slogan .slogan-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--choco, #26140c);
+  letter-spacing: 3px;
+  display: block;
+  line-height: 1.5;
+}
+.preise-slogan .slogan-sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-light, #644d42);
+  letter-spacing: 1px;
+  margin-top: 0.75rem;
+  display: block;
+}
 
+.preise-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.preise-teaser-card {
+  background: white;
+  border: 1px solid var(--beige, #d5c1b8);
+  padding: 2rem 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.preise-teaser-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--mocha, #644d42),
+    var(--choco, #26140c)
+  );
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+  transform-origin: left;
+}
+.preise-teaser-card:hover {
+  border-color: var(--mocha, #644d42);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(38, 20, 12, 0.1);
+}
+.preise-teaser-card:hover::before {
+  transform: scaleX(1);
+}
+
+.preise-teaser-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.preise-teaser-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--choco, #26140c);
+}
+.preise-teaser-desc {
+  font-size: 0.82rem;
+  color: var(--text-light, #644d42);
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+.preise-cta-wrap {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.preise-note {
+  font-size: 0.85rem;
+  color: var(--text-light, #644d42);
+  margin-top: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================
+   Booking Banner
+========================== */
+
+.booking-banner {
+  background: #26140c;
+  padding: 90px 20px;
+  text-align: center;
+  color: #fff3df;
+}
+
+.booking-banner-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.booking-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d5c1b8;
+  font-size: 0.8rem;
+}
+
+.booking-banner h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.booking-banner p {
+  color: #e8ddd7;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.booking-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.booking-btn-primary,
+.booking-btn-secondary {
+  padding: 15px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.booking-btn-primary {
+  background: #d5c1b8;
+  color: #26140c;
+  font-weight: 600;
+}
+
+.booking-btn-primary:hover {
+  background: white;
+}
+
+.booking-btn-secondary {
+  border: 1px solid #d5c1b8;
+  color: #fff3df;
+}
+
+.booking-btn-secondary:hover {
+  background: #644d42;
+}
+/* ---------- Booking Responsive ---------- */
+
+@media (max-width: 768px) {
+  .booking-banner {
+    padding: 60px 20px;
+  }
+
+  .booking-banner h2 {
+    font-size: 2.2rem;
+
+    line-height: 1.2;
+  }
+
+  .booking-banner p {
+    font-size: 0.95rem;
+  }
+
+  .booking-buttons {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+  }
+
+  .booking-btn-primary,
+  .booking-btn-secondary {
+    width: 100%;
+
+    max-width: 320px;
+  }
+}
 /* Contact Section */
 .contact-grid {
   display: grid;
@@ -803,7 +1011,7 @@ section {
   color: var(--mocha);
 }
 
-.whatsapp-button {
+.contact-whatsapp-button {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
@@ -996,6 +1204,215 @@ footer {
   position: relative;
   display: flex;
   align-items: center;
+}
+/* ===== Pakete Popup ===== */
+.ilu-pkg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 20, 12, 0.72);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+  will-change: opacity;
+}
+
+.ilu-pkg-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ilu-pkg-card {
+  background: var(--cream, #fff3df);
+  border: 1px solid var(--beige, #d5c1b8);
+  max-width: 600px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(38, 20, 12, 0.4);
+  transform: scale(0.92) translateY(10px);
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.ilu-pkg-overlay.active .ilu-pkg-card {
+  transform: scale(1) translateY(0);
+}
+
+.ilu-pkg-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--choco, #26140c);
+  color: var(--cream, #fff3df);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.ilu-pkg-close:hover {
+  background: var(--mocha, #644d42);
+  transform: scale(1.1);
+}
+
+.ilu-pkg-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ilu-pkg-header {
+  text-align: center;
+  padding: 2.25rem 2rem 1.25rem;
+  background: linear-gradient(
+    135deg,
+    var(--mocha, #644d42) 0%,
+    var(--choco, #26140c) 100%
+  );
+  color: var(--cream, #fff3df);
+}
+
+.ilu-pkg-badge {
+  display: inline-block;
+  padding: 0.4rem 1.3rem;
+  background: rgba(255, 243, 223, 0.15);
+  border: 1px solid var(--beige, #d5c1b8);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.ilu-pkg-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.ilu-pkg-header p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.ilu-pkg-table {
+  padding: 0.5rem 1.5rem;
+}
+
+.ilu-pkg-row {
+  display: grid;
+  grid-template-columns: 1fr 70px 70px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--beige, #d5c1b8);
+}
+
+.ilu-pkg-row:last-of-type {
+  border-bottom: none;
+}
+
+.ilu-pkg-row-head {
+  padding-top: 1.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.ilu-pkg-row-head span {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mocha, #644d42);
+  text-align: center;
+  font-weight: 600;
+}
+
+.ilu-pkg-row-head .ilu-pkg-name {
+  text-align: left;
+}
+
+.ilu-pkg-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  color: var(--choco, #26140c);
+  line-height: 1.3;
+}
+
+.ilu-pkg-name small {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-light, #644d42);
+  line-height: 1.4;
+  margin-top: 0.2rem;
+  font-weight: 400;
+}
+
+.ilu-pkg-price {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--mocha, #644d42);
+}
+
+.ilu-pkg-cta {
+  margin: 1.5rem 1.5rem 1.75rem;
+  padding: 0.95rem;
+  text-align: center;
+  background: var(--choco, #26140c);
+  color: var(--cream, #fff3df);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.ilu-pkg-link:hover .ilu-pkg-cta {
+  background: var(--mocha, #644d42);
+}
+
+@media (max-width: 480px) {
+  .ilu-pkg-header {
+    padding: 1.75rem 1.25rem 1rem;
+  }
+  .ilu-pkg-header h2 {
+    font-size: 1.7rem;
+  }
+  .ilu-pkg-table {
+    padding: 0.25rem 1rem;
+  }
+  .ilu-pkg-row {
+    grid-template-columns: 1fr 58px 58px;
+    gap: 0.4rem;
+  }
+  .ilu-pkg-name {
+    font-size: 0.92rem;
+  }
+  .ilu-pkg-price {
+    font-size: 1rem;
+  }
 }
 
 /* Mobile Menu */
@@ -1253,5 +1670,33 @@ footer {
     width: 50px;
     height: 50px;
     font-size: 1.3rem;
+  }
+}
+/* ---------- Warum ilu Responsive ---------- */
+
+@media (max-width: 1200px) {
+  .preise-teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 700px) {
+  .preise-teaser-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+
+  .preise-teaser-card {
+    padding: 24px;
+  }
+
+  .preise-teaser-name {
+    font-size: 1.4rem;
+  }
+
+  .preise-teaser-desc {
+    font-size: 0.9rem;
   }
 }
